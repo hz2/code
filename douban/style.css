@@ -1,0 +1,526 @@
+body {
+    margin: 0;
+}
+
+.box {
+    cursor: default;
+    margin: auto;
+    padding: 40px 36px;
+    z-index: 1;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen {
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
+    display: block;
+    margin: -60px;
+    height: 750px;
+    width: 400px;
+    z-index: -1;
+    position: absolute;
+}
+
+.screen,
+#pic {
+    background: url() 50% 50%/ cover no-repeat;
+}
+
+#pic {
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    border-radius: 15px 15px 0 0;
+}
+
+.mask {
+    background: -webkit-linear-gradient( top, transparent 20%, #000);
+    background: linear-gradient( to bottom, transparent 20%, #000);
+    width: inherit;
+    height: inherit;
+}
+
+#title {
+    margin: -90px 20px;
+    color: #FFF;
+    font-size: 20px;
+    width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.title_d {
+    margin-top: 98px;
+}
+
+.title_d,
+.title_a {
+    margin-left: 20px;
+    color: #bbb;
+    font-size: 14.5px;
+    line-height: 18px;
+    width: 160px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#actor,
+#director,
+#title_d,
+#title_a {
+    display: inline;
+}
+
+#bigstar {
+    width: 100%;
+    height: 12px;
+    margin-left: 6px;
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+#user_star,
+[class^="bigstar"] {
+    display: inline-block;
+    background-image: url(https://img3.doubanio.com/f/shire/680a4bc4c384199245b080c7104da5be8ed717d3/pics/rating_icons/ic_rating_m.png);
+}
+
+#user_star.star5,
+.bigstar50 {
+    background-position-y: 0%;
+}
+
+.bigstar45 {
+    background-position-y: 10%;
+}
+
+#user_star.star4,
+.bigstar40 {
+    background-position-y: 20%;
+}
+
+.bigstar35 {
+    background-position-y: 30%;
+}
+
+#user_star.star3,
+#user_star,
+.bigstar30 {
+    background-position-y: 40%;
+}
+
+.bigstar25 {
+    background-position-y: 50%;
+}
+
+#user_star.star2,
+.bigstar20 {
+    background-position-y: 60%;
+}
+
+.bigstar15 {
+    background-position-y: 70%;
+}
+
+#user_star.star1,
+.bigstar10 {
+    background-position-y: 80%;
+}
+
+.bigstar05 {
+    background-position-y: 90%;
+}
+
+.bigstar00 {
+    background-position-y: 100%;
+}
+
+.star {
+    width: 75px;
+    height: 85px;
+    border-radius: 7px;
+    border: 1.5px #aaa solid;
+    text-align: center;
+    margin: -90px 205px;
+    background-color: rgba(255, 255, 255, .15);
+}
+
+#star {
+    line-height: 44px;
+    font-size: 28px;
+    color: #eee;
+}
+
+.num {
+    font-size: 12px;
+    color: #aaa;
+}
+
+#num {
+    display: inline;
+}
+
+.qr {
+    height: 90px;
+    width: 300px;
+    background: #fff;
+    border-radius: 0 0 15px 15px;
+}
+
+.user {
+    padding: 25px;
+    height: 80px;
+    width: 250px;
+    background: #fff;
+}
+
+.qr {
+    height: 80px;
+    width: 300px;
+    background: #fff;
+    margin-top: -10px;
+    border-radius: 0 0 15px 15px;
+}
+
+.line2 {
+    position: absolute;
+    margin: -20px 10px;
+    width: 280px;
+    border-top: dashed #ddd 2px;
+}
+
+.line {
+    width: 280px;
+    height: 40px;
+    margin: 0 10px;
+    background-color: #fff;
+}
+
+.line:before,
+.line:after {
+    border-radius: 100%;
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: transparent;
+    border-color: transparent #FFF #FFF transparent;
+    border-width: 10px;
+    border-style: solid;
+}
+
+.line:before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin: -10px -30px;
+}
+
+.line:after {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    margin: -40px 270px;
+}
+
+#user_pic {
+    display: inline-block;
+    background-image: url(https://img1.doubanio.com/icon/user_normal.jpg);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 1px solid #eee;
+}
+
+#user_status {
+    display: inline-block;
+    position: absolute;
+    margin: 3px 15px;
+    font-size: 15px;
+}
+
+#user_name {
+    display: inline-block;
+    font-weight: 700;
+    max-width: 120px;
+    overflow: hidden;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.user_status {
+    vertical-align: top;
+}
+
+#user_star {
+    margin: 7px 15px;
+    width: 100px;
+    height: 15px;
+    background-repeat: no-repeat;
+}
+
+#user_text {
+    color: #333;
+    padding: 8px 10px;
+    text-overflow: ellipsis;
+    height: 35px;
+    overflow: hidden;
+}
+
+.qrcode {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin: 10px 20px;
+    background: url(https://img3.doubanio.com/f/frodo/cebb7f6dcd9173b63c0d29111ad5c79329f0d348/pics/app/pin.png) 100% / cover;
+}
+
+.dlapp {
+    padding: 13px 85px;
+    font-size: 14px;
+    color: #333;
+}
+
+.douban {
+    margin: 20px auto 0;
+    border-radius: 20px;
+    width: 80px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, .2);
+    font-size: 13px;
+    line-height: 20px;
+    color: #eee;
+    text-align: center;
+    padding: 5px;
+}
+
+.icon {
+    display: inline-block;
+    height: 17px;
+    width: 17px;
+    vertical-align: sub;
+    background: url(https://img3.doubanio.com/f/frodo/144e6fb7d96701944e7dbb1a9bad51bdb1debe29/pics/app/logo.png)100% / cover no-repeat;
+}
+
+.field {
+    position: fixed;
+    top: 100px;
+    width: 200px;
+    left: calc((50vw - 372px / 2) / 2 - 100px);
+}
+
+.error {
+    font-size: .8em;
+    font-style: italic;
+    color: #f00;
+    margin: 3px 5px;
+}
+
+.loading {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, .9);
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+}
+
+.loadingicon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 20vh auto;
+    border-width: 12px;
+    border-style: solid;
+    border-color: transparent #999 #999 #999;
+    -webkit-animation: load 1s ease-in infinite;
+    animation: load 1s ease-in infinite;
+}
+
+@-webkit-keyframes load {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.loadingicon:after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 1px;
+    border-width: 11px;
+    border-style: solid;
+    border-color: #999 #999 transparent transparent;
+    margin: -7px -8px;
+}
+
+.loadingicon2 {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    height: 90px;
+    width: 12px;
+    background: #999;
+    margin: 19vh auto;
+}
+
+.loadingicon2:before {
+    content: "";
+    display: block;
+    height: 12px;
+    width: 90px;
+    background: #999;
+    margin: 39px -39px;
+    position: absolute;
+}
+
+.loadinginfo {
+    text-align: center;
+    color: #aaa;
+    font-size: 22px;
+}
+
+.field {
+    line-height: 2em;
+    color: #555;
+}
+
+.field input:focus {
+    background: #e8f0f9;
+}
+
+.field input {
+    border: 1px solid #ccc;
+    padding: 5px 7px;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #666;
+    width: 180px;
+}
+
+select {
+    border: 1px solid #ccc;
+    /**   appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none; **/
+    padding: 5px 7px;
+    border-radius: 5px;
+    font-size: .9em;
+    color: #666;
+}
+
+input[type="radio"] {
+    opacity: 0;
+    width: 0;
+}
+
+input[type="radio"]:checked+label:before,
+input[type="radio"]+label:before {
+    content: "";
+    height: 1rem;
+    width: 1rem;
+    display: block;
+    border: .125rem solid #ccc;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: -1.5rem;
+}
+
+form {
+    line-height: 1.2em;
+    margin: 12px 0 8px;
+    font-size: .9em;
+}
+
+input[type="radio"]:checked+label:before {
+    box-shadow: .125rem .125rem 0 #fff inset, -.125rem -.125rem 0 #fff inset, -.125rem .125rem 0 #fff inset, .125rem -.125rem 0 #fff inset, .3rem .3rem 0 #ccc inset, -.5rem -.5rem 0 #ddd inset;
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 .5rem;
+}
+
+.tab {
+    border: 1px solid #84c8fe;
+    padding: 0;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 194px;
+    height: 35px;
+    background: #a6d6fb;
+}
+
+.tab div {
+    width: calc( 100% / 3);
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    float: left;
+    height: 100%;
+    line-height: 35px;
+}
+
+.tab div:hover,
+.tab .current {
+    background: #84c8fe;
+}
+
+.tab a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* Ribbon */
+
+.ribbon {
+    overflow: hidden;
+    z-index: 0;
+    width: 100%;
+    height: 200px;
+    position: absolute;
+}
+
+#ribbon_text {
+    text-decoration: none;
+    color: #eee;
+    display: block;
+    font-size: 13px;
+    width: 300px;
+    background: #999;
+    text-align: center;
+    line-height: 25px;
+    border: #eee 1px dashed;
+    box-shadow: 0 2px 0 #999, 0 -2px 0 #999, 0 0 20px #999;
+    transform: rotate(45deg);
+    top: 45px;
+    z-index: 1;
+    right: -90px;
+    position: absolute;
+}

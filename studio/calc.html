@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../assets/jquery-3.2.1.min.js"></script>
+    <link type="text/css" href="../hxui.css" rel="stylesheet">
+    <link type="text/css" href="style_calc.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h2>输入框计算器</h2>
+    <div class="calc_tip">支持输入数字（<kbd>0</kbd> 到 <kbd>9</kbd>）和加<kbd>+</kbd>减<kbd>-</kbd>乘<kbd>*</kbd>除<kbd>/</kbd>进行四则运算。</div>
+    <div id="calc_tip2"></div>
+    <input type="text" id="calc" value=""> = <span id="calc_result">归零</span>
+    <ul id="calc_his">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <div class="his_tip"><span id="calc_clear">清空</span> | <span id="calc_reset">归零</span> <span id="calc_toggle"></span></div>
+    </ul>
+    <script type="text/javascript" src="main_calc.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>豆瓣APP分享生成器</title>
+    <meta name="robots" content="noindex">
+    <link rel="shortcut icon" type="image/x-icon" href="./icon.png" />
+    <link rel="mask-icon" type="" href="./icon.svg" color="#22c311" />
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="ribbon">
+        <a href="#" title="查看源码" id="ribbon_text" target="_blank">Fork me on <span>Github</span></a>
+    </div>
+    <div class="loading">
+        <div class="loadingicon"></div>
+        <div class="loadinginfo">数据加载中</div>
+    </div>
+    <div class="box">
+        <div class="screen"></div>
+        <div id="pic">
+            <div class="mask"></div>
+            <div id="title"></div>
+            <div class="title_d">
+                <div id="title_d"></div>
+                <div id="director"></div>
+            </div>
+            <div class="title_a">
+                <div id="title_a"></div>
+                <div id="actor"></div>
+            </div>
+            <div class="star">
+                <div id="star"></div>
+                <div id="bigstar"></div>
+                <div class="num">
+                    <div id="num"></div>人</div>
+            </div>
+        </div>
+        <div class="user">
+            <div id="user_pic"></div>
+            <div id="user_status">
+                <span id="user_name"></span>
+                <span class="user_status"></span>
+            </div>
+            <div id="user_star"></div>
+            <div id="user_text"></div>
+
+        </div>
+        <div class="line"></div>
+        <div class="line2"></div>
+        <div class="qr">
+            <div class="qrcode"></div>
+            <div class="dlapp">长按识别二维码 <br />下载豆瓣 App</div>
+        </div>
+        <div class="douban">
+            <div class="icon"></div> · 豆瓣
+        </div>
+    </div>
+    <div class="field">
+        <div class="tab">
+            <div id="movietab"><a href="#movie">电影</a></div>
+            <div id="booktab"><a href="#book">读书</a></div>
+            <div id="musictab"><a href="#music">音乐</a></div>
+        </div>
+        <div id="your_id">请输入电影ID</div>
+        <input id="text_1" type="text" value="" />
+        <div class="error"></div>
+        <div>请输入头像地址</div>
+        <input id="text_3" type="text" value="https://img1.doubanio.com/icon/user_normal.jpg" />
+        <div>请输入昵称</div>
+        <input id="text_2" type="text" value="观众" />
+        <form id="dmovie">
+            <input id="d_todo" type="radio" name="dstatus" /><label for="d_todo"></label><input id="d_doing" type="radio" name="dstatus" /><label for="d_doing"></label><input id="d_done" type="radio" name="dstatus" checked="checked" /><label for="d_done"></label>
+        </form>
+        <div>请输入评语</div>
+        <input id="text_4" type="text" value="很棒的电影！" />
+        <div class="starval">请选择打分</div>
+        <select name="" id="starval">
+            <option value="star1">很差⭐</option>
+            <option value="star2">较差⭐⭐</option>
+            <option value="star3" selected >还行⭐⭐⭐</option>
+            <option value="star4">推荐⭐⭐⭐⭐</option>
+            <option value="star5">力荐⭐⭐⭐⭐⭐</option>
+        </select>
+    </div>
+    <script src="../assets/jquery-3.2.1.min.js"></script>
+    <script src="./load.min.js"></script>
+</body>
+
+</html>

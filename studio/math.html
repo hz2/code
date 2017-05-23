@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../assets/jquery-3.2.1.min.js"></script>
+    <link type="text/css" href="../hxui.css" rel="stylesheet">
+    <link type="text/css" href="style_math.css" rel="stylesheet">
+</head>
+
+<body>
+    <h2>输入框计算器</h2>
+    <div id="calc_tip">支持输入数字进行加<kbd>+</kbd>减<kbd>-</kbd>乘<kbd>*</kbd>除<kbd>/</kbd>四则运算。</div>
+    <input type="text" id="calc" value="" placeholder="1+(2*3)/5-6"> = <span id="calc_result">归零</span>
+    <ul id="calc_his">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <div class="his_tip"><span id="calc_clear">清空</span> | <span id="calc_reset">归零</span> <span id="calc_toggle"></span></div>
+    </ul>
+    <h2>进制转换</h2>
+    <div id="hex_tip">输入数字，自动转化成其他进制</div>
+    <ul id="hex">
+        <li>
+            <div>二进制</div>
+            <input type="text" id="type_bin" pattern="[0-1]+" placeholder="1010">
+        </li>
+        <li>
+            <div>八进制</div>
+            <input type="text" id="type_oct" pattern="[0-7]+" placeholder="12">
+        </li>
+        <li>
+            <div>十进制</div>
+            <input type="text" id="type_dec" pattern="[0-9]+" placeholder="10">
+        </li>
+        <li>
+            <div>十六进制</div>
+            <input type="text" id="type_hex" pattern="[0-9A-Fa-f]+" placeholder="A">
+        </li>
+    </ul>
+    <h2>网址编码</h2>
+    <div id="hex_tip">输入数字，自动转化成其他进制</div>
+    <ul id="uri">
+        <li>
+            <div>编码</div>
+            <input type="text" id="type_uriencode" placeholder="中文">
+        </li>
+        <li>
+            <div>解码</div>
+            <input type="text" id="type_uridecode" placeholder="%E4%B8%AD%E6%96%87">
+        </li>
+    </ul>
+    <h2>字符转Unicode</h2>
+    <div id="hex_tip">输入数字，自动转化成其他进制</div>
+    <ul id="uri">
+        <li>
+            <div>编码</div>
+            <input type="text" id="type_uriencode" placeholder="中文">
+        </li>
+        <li>
+            <div>解码</div>
+            <input type="text" id="type_uridecode" placeholder="%E4%B8%AD%E6%96%87">
+        </li>
+    </ul>
+
+    <script type="text/javascript" src="main_math.js"></script>
+</body>
+
+</html>

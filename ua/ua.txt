@@ -1,0 +1,127 @@
+
+火狐
+Mozilla/5.0 (X11; Linux x86_64; rv:54.0) Gecko/20100101 Firefox/54.0
+
+chrome
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
+Mdiori 浏览器
+
+Mozilla/5.0 (X11; Linux) AppleWebKit/538.15 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/538.15 Midori/0.5
+苍月
+Mozilla/5.0 (X11; Linux x86_64; rv:38.9) Gecko/20100101 Goanna/2.0 Firefox/38.9 PaleMoon/26.2.2
+qupzilla l浏览器
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) QupZilla/1.8.9 Safari/538.1
+MIn 浏览器
+
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Min/1.5.0 Chrome/53.0.2785.113 Electron/1.4.3 Safari/537.36
+
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36 OPR/43.0.2442.806
+
+yandex
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.76 YaBrowser/16.6.0.6383 (beta) Safari/537.36
+
+
+雷鸟
+Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Thunderbird/45.7.0
+
+知乎
+Futureve/4.50.0 Mozilla/5.0 (Linux; Android 6.0; PLK-UL00 Build/HONORPLK-UL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/59.0.3071.36 Mobile Safari/537.36
+
+
+用户代理
+netdisk;5.2.7;PC;PC-Windows;6.2.9200;WindowsBaiduYunGuanJia
+代码名Mozilla应用名Netscape产品Gecko次级产品20030107Cookietrue禁止追踪null硬件并发8语言zh-CN多点触控5联网状态true平台Linux aarch64供应商Google Inc.屏幕尺寸360x640
+
+
+
+Mozilla/5.0 (Linux; Android 6.0; PLK-UL00 Build/HONORPLK-UL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/59.0.3071.36 Mobile Safari/537.36 (#Build; HONOR; PLK-UL00; EMUI4.0.3_PLK-UL00_7.5.1; 6.0) +CoolMarket/7.7.1-beta3
+
+
+Mozilla/5.0 (Linux; U; Android 6.0; zh-CN; PLK-UL00 Build/HONORPLK-UL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/40.0.2214.89 UCBrowser/11.3.8.909 UCBS/2.10.1.4 Mobile Safari/537.36 Nebula AlipayDefined(nt:WIFI,ws:360|0|3.0) AliApp(AP/10.0.12.042101) AlipayClient/10.0.12.042101 Language/zh-Hans useStatusBar/true
+
+
+-------
+
+Chrome/59.0.3071.63 Mobile Safari/537.36 Qiyu/1.12
+
+
+Mozilla/5.0 (Linux; Android 6.0; PLK-UL00 Build/HONORPLK-UL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/59.0.3071.60 Mobile Safari/537.36 bdbrowser/6.4.0.4
+百度
+夸克
+Mozilla/5.0 (Linux; U; Android 6.0; zh-CN; PLK-UL00 Build/HONORPLK-UL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/40.0.2214.89 Quark/1.6.8.909 Mobile Safari/537.36
+微米
+Mozilla/5.0 (Linux; Android 6.0; PLK-UL00 Build/HONORPLK-UL00) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 YaBrowser/16.6.0.9655.00 (UME) Mobile Safari/537.36
+火候4.3.0.2
+Mozilla/5.0 (Linux; Android 6.0; PLK-UL00 Build/HONORPLK-UL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/59.0.3071.63 Mobile Safari/537.36 HuohouBrowser/4032
+
+AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/48.0.2564.116 Mobile Safari/537.36 baidubrowser/7.13.13.0 (Baidu; P1 6.0)
+
+
+Mozilla/5.0 (Linux; U; Android 6.0; en-US; PLK-UL00 Build/HONORPLK-UL00) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/11.3.0.950 U3/0.8.0 Mobile Safari/534.30
+
+Mozilla/5.0 (Linux; Android 6.0; PLK-UL00 Build/HONORPLK-UL00) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 YaBrowser/17.3.2.414.00 Mobile Safari/537.36
+
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/11.0.696.34 Safari/534.24; 360browser(securitypay,securityinstalled)
+
+
+Mozilla/5.0 (Linux; U; Android 6.0; zh-cn; PLK-UL00 Build/HONORPLK-UL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/59.0.3071.60 Mobile Safari/537.36 Hawk/QuickBrowser/1.0.35
+halo 浏览器
+Mozilla/5.0 (Linux; U; Android 6.0; zh-CN; PLK-UL00 Build/HONORPLK-UL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/40.0.2214.89 Quark/1.6.8.909 Mobile Safari/537.36 
+夸克
+
+用户代理
+Mozilla/5.0 (X11; U; Linux i686; zh-CN; rv:1.2.3.4) Gecko/
+
+Mozilla/5.0 (Linux; Android 6.0; PLK-UL00 Build/HONORPLK-UL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/44.0.2403.119 Mobile Safari/537.36 ACHEETAHI/1
+猎豹
+
+
+
+
+————————————————
+
+
+
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 YaBrowser/17.3.1.840 Yowser/2.5 Safari/537.36
+
+
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36 Qiyu/2.1.0.0
+
+
+Mozilla/5.0 (Windows NT 6.2; WOW64; Trident/7.0; rv:11.0; SaaYaa) like Gecko
+
+
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36 TheWorld 7
+
+
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:52.0) Gecko/20100101 Firefox/52.0.2 Waterfox/52.0.2
+
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER
+
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.2604.400 QQBrowser/9.6.10875.400
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Core/1.53.2604.400 QQBrowser/9.6.10875.400 Edge/15.15063
+
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 UBrowser/6.1.2107.204 Safari/537.36
+
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 BIDUBrowser/8.4 Safari/537.36
+
+
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.221 Safari/537.36 SE 2.X MetaSr 1.0
+Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; SE 2.X MetaSr 1.0; rv:11.0) like Gecko
+
+
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36 QIHU 360SE
+
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36 QIHU 360EE
+
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/5.0.3.3000 Chrome/47.0.2526.73 Safari/537.36
+
+Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36 Thunder/9.1.29.692 ThunderComponent/1.0.0.13
+
+
+window.navigator.userAgent
+
+
+
+
+

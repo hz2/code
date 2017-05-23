@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="540"
+   width="540"
+   viewBox="0 0 540 540"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="hx-cr.svg"
+   inkscape:version="0.92.1 r15371">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs8" />
+  <path
+     style="fill:#008080;"
+     d="M 300,75 A 225,225 0 0 0 75,300 225,225 0 0 0 300,525 225,225 0 0 0 525,300 225,225 0 0 0 300,75 Z m 0,25.029292 a 200,200 0 0 1 108.95312,32.49414 l -26.05273,19.66602 52,140.30078 -88.59961,-52.50977 -92.60156,68.00977 L 197.99,237.75 101.86695,274.25781 A 200,200 0 0 1 299.99023,100.02929 Z M 346.29078,291.98046 401.99,362.2207 498.13258,325.67773 A 200,200 0 0 1 301.64062,499.9707 h -2.82031 A 200,200 0 0 1 190.96679,467.49023 l 26.12305,-19.71094 -51.98047,-140.29883 88.58008,52.50977 z"
+     id="path4495-3-6"
+     inkscape:connector-curvature="0" />
+</svg>

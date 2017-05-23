@@ -1,0 +1,469 @@
+body {
+    color: #666;
+    margin: 0;
+    padding: 0;
+}
+/*图标颜色*/
+.icon-q360chr {
+    background: #FFAC0C;
+}
+.icon-silk {
+    background: #F98B00;
+}
+
+.icon-qihoo,
+.icon-q360se,
+.icon-q360so {
+    background: #0AD15D;
+}
+
+.icon-aigo,
+.icon-gionee,
+.icon-liebao,
+.icon-mi,
+.icon-uc,
+.icon-micromax    {
+    background: #f60;
+}
+
+.icon-alcatel {
+    background: #00a0e3;
+}
+
+.icon-alipay {
+    background: #00a3ee;
+}
+
+.icon-acer,
+.icon-android,
+.icon-dolphin,
+.icon-htc,
+.icon-midori  {
+    background: #A5CF4C;
+} 
+
+.icon-apple,
+.icon-disable,
+.icon-operadev
+ {
+    background: #AFBDC4;
+}
+
+.icon-bb,
+.icon-sony,
+.icon-steam {
+    background: #888;
+}
+.icon-arm {
+    background: #128CAB;
+}
+
+.icon-baidu,
+.icon-bdpan,
+.icon-sgllq,
+.icon-kindle,
+.icon-tieba,
+.icon-zuk {
+    background: #3B8CFF;
+}
+
+.icon-bdllq {
+    background: #1BACF0;
+}
+
+.icon-bing {
+    background: #0C8484;
+}
+
+.icon-chrome {
+    background: #F7CC4F;
+}
+
+.icon-coolpad,
+.icon-galaxy {
+    background: #3E27B2;
+}
+
+.icon-cyanogenmod,
+.icon-deepin,
+.icon-electron,
+.icon-search{
+    background: #45ddfd;
+}
+
+.icon-dingtalk {
+    background: #26A2FA;
+}
+
+
+.icon-edge {
+    background: #0067B8;
+}
+
+.icon-fedora {
+    background: #4f6fb0;
+}
+
+.icon-firefox {
+    background: #f0ad4e;
+}
+
+
+.icon-gnome {
+    background: #4a86cf;
+}
+
+.icon-google {
+    background: #5391F5;
+}
+
+.icon-abp,
+.icon-googleg,
+.icon-bdmllq,
+.icon-cmusic,
+.icon-ktouch,
+.icon-jianguo {
+    background: #EA4335;
+}
+
+.icon-lenovo,
+.icon-sharp,
+.icon-snapdragon,
+.icon-nubia,
+.icon-oneplus,
+.icon-tcl
+{
+    background: #FF3423;
+}
+.icon-huawei {
+    background: #EC2728;
+}
+.icon-opera,
+.icon-operanew,
+.icon-vivaldi {
+    background: #f8192b;
+}
+.icon-sogou {
+    background: #FD6853;
+}
+.icon-weibo {
+    background: #e6162d;
+}
+.icon-yandex {
+    background: #EC1C24;
+}
+.icon-honor {
+    background: #01B4E1;
+}
+
+.icon-hxalpha ,
+.icon-hxbetaq {
+    background: teal;
+}
+
+.icon-ie {
+    background: #428bca;
+}
+
+.icon-ios {
+    background: #36C398;
+}
+
+.icon-lemeng ,
+.icon-linux {
+    background: #FFD133;
+}
+.icon-maxthon {
+    background: #0AA3FF;
+}
+
+.icon-meego {
+    background: #602E87;
+}
+
+.icon-meilan ,
+.icon-meizu ,
+.icon-meizuicon {
+    background: #0cbbef;
+}
+
+.icon-microsoft,
+.icon-lumia {
+    background: #1AD1D1;
+}
+
+.icon-mobile {
+    background: #489FB6;
+}
+
+.icon-tablet {
+    background: #4381BB;
+}
+
+.icon-doov,
+.icon-lg,
+.icon-moto {
+    background: #DB1A83;
+}
+
+.icon-netscape {
+    background: #1C8388;
+}
+
+.icon-nokia {
+    background: #014485;
+}  
+.icon-qqllq ,
+.icon-qq,
+.icon-qqo,
+.icon-qqtim {
+    background: #38AFFF;
+}
+
+.icon-qupzilla {
+    background: #37ADD6;
+}
+
+.icon-qzone {
+    background: #ffce00;
+}
+
+.icon-remixos {
+    background: #00ACFE;
+}
+
+.icon-safari {
+    background: #18B9FA;
+}
+
+.icon-samsung {
+    background: #1428A0;
+}
+.icon-amazon {
+    background: #FC9B18;
+}
+
+.icon-theworld {
+    background: #74ACE5;
+}
+
+.icon-tor {
+    background: #56347E;
+}
+
+.icon-twitter {
+    background: #1AB2E8;
+}
+
+.icon-vertu {
+    background: #CBA029;
+}
+
+.icon-vivo {
+    background: #008CD6;
+}
+
+.icon-waterfox {
+    background: #5475A9;
+}
+
+.icon-palemoon {
+    background: #325fa7;
+}
+
+.icon-webkit {
+    background: #1E96EB;
+}
+
+.icon-wechat {
+    background: #00D00D;
+}
+
+
+.icon-win {
+    background-color: #39b3d7;
+}
+
+.icon-winxp {
+    background-color: #39b3d7;
+}
+
+.icon-winphone,
+.icon-xperia,
+.icon-le,
+.icon-macos {
+    background: #9C46E3;
+}
+
+.icon-x64r,
+.icon-x64c {
+    background: #5fafff;
+}
+
+.icon-x86r,
+.icon-x86c {
+    background: #E9D121;
+}
+
+.icon-xunlei {
+    background: #439bfe;
+}
+
+.icon-zte {
+    background: #008fd5;
+}
+
+.icon-oppo,
+.icon-coolapk,
+.icon-xbox,
+.icon-nova,
+.icon-lcllq,
+.icon-browser,
+.icon-system,
+.icon-pc {
+    background: #1ba631;
+}
+.icon-operaneon {
+    background: #0be874;
+}
+
+#icon>div svg,
+#icon>div img {
+    width: 130px;
+    height: 130px;
+    margin: 35px;
+    vertical-align: top;
+    fill:#fff;
+}
+
+#icon>div div {
+    color: #fff;
+    line-height: 60px;
+    background: rgba(0, 0, 0, .25);
+    background: #0000004d;
+}
+
+.content {
+    max-width: 1170px;
+    height: 780px;
+    margin: calc( 50vh - 390px) auto;
+}
+
+#icon {
+    width: 260px;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    box-shadow: 1px 1px 50px rgba(0, 0, 0, .15);
+}
+
+.uainfo {
+    display: inline-block;
+    background: #fff;
+    height: 780px;
+    max-width: 910px;
+    position: absolute;
+    box-shadow: 10px 0px 50px rgba(0, 0, 0, 0.2) inset;
+}
+
+#uanavi li {
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+}
+
+#uanavi {
+    width: 85%;
+    opacity: .75;
+    margin: 50px auto;
+    border: 1px #ccc solid;
+}
+
+#uanavi li+li {
+    border-top: 1px #ccc solid;
+}
+
+#uanavi li div {
+    line-height: 40px;
+    display: inline-block;
+    width: 30%;
+    padding-left: 50px;
+}
+
+#uanavi li:first-child div:last-child {
+    display: block;
+    border-top: 1px #ccc solid;
+    border-left: 0;
+    width: initial;
+    line-height: 30px;
+    padding: 20px 50px;
+}
+
+#uanavi li div+div {
+    border-left: 1px #ccc solid;
+}
+
+@media screen and ( max-height: 780px) {
+    .content {
+        max-width: 150vh;
+        height: 100vh;
+        margin: 0 auto;
+    }
+    .uainfo {
+        margin-left: 35vh;
+        max-width: 115vh;
+        height: auto;
+    }
+    #icon {
+        position: fixed;
+        width: 35vh;
+    }
+    #icon>div {
+        height: calc( 1/3 * 100vh);
+    }
+    #icon>div svg,
+    #icon>div img {
+        height: 20vh;
+        width: auto;
+        max-width: 100%;
+        margin: calc( 8/300 * 100vh) 0;
+    }
+    #icon>div div {
+        line-height: 8vh;
+    }
+}
+
+@media all  and (orientation: portrait) {
+    .content {
+        max-width: 100%;
+        height: auto;
+        margin: 0;
+    }
+    .uainfo {
+        margin: 40vw 0 0;
+        max-width: 100%;
+        display: block;
+    }
+    #icon {
+        width: 100%;
+        height: 40vw;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        box-shadow: 1px 1px 2px #BCBCBC;
+    }
+    #icon>div svg,
+    #icon>div img {
+        height: 20vw;
+        margin: 5vw auto;
+    }
+    #icon>div div {
+        line-height: 10vw;
+    }
+    #icon>div {
+        width: calc(100% / 3);
+        float: left;
+        text-align: center;
+        height: 100%;
+    }
+}

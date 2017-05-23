@@ -1,0 +1,822 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo</title>
+<link href="hxfont.css" rel="stylesheet" >
+<style>
+body {color:#555;font-family: "微软雅黑","Noto Sans CJK",sans-serif;}
+.content { width: 940px; margin: 0 auto;}
+.box{ display: inline-block; border: 1px solid #898989; padding: 2px;margin: 5px;width:90px;}
+.box > i {padding: 2px; text-align: center; display: block;}
+.icon { text-align: center;padding: 2px;}
+.text { font-size: 20px; }
+.copy{ overflow: hidden;}
+.copy input { border: 1px solid #999;width:86px;border-radius: 2px;text-overflow: ellipsis;}
+.copy:hover input { text-overflow:inherit;overflow:visible;}
+[class^="hx-"]::before { font-size: 60px; line-height: 60px; }
+[class^="hx-"]::after { display: block !important; }
+nav { background: #ddd;list-style: none;position: fixed;right: 0;display: block;height: 100%;width: 200px;top: 0;padding: 11vh 0 0 15px;margin-right: -210px;border-left: 1px solid rgb(194, 194, 194);z-index: 0; }
+nav:hover { margin-right: 0px;-webkit-transition: all .3s;-moz-transition: all .3s;-ms-transition: all .3s;-o-transition: all .3s;transition: all .3s; }
+nav a { color: #545454;  text-decoration: none;padding: 0px 3px;}
+nav li:nth-child(2n) a:hover{background: white;box-shadow: 1px 1px 1px #989898 inset;border-radius: 2px; }
+nav::before {content: " ";display: block;width: 0px;height: 0px;margin-left: -115px;border-width: 30px 50px 70px;border-style: solid;border-color: transparent #ddd transparent transparent;position: fixed;top: 100px;z-index: -2; }
+nav::after {content: " ";display: block;width: 0px;height: 0px;margin-left: -118px;border-width: 31px 51px 71px;border-style: solid;border-color: transparent rgb(194, 194, 194) transparent transparent;position: fixed;top: 99px;z-index: -4; }
+nav li:nth-child(2n+1) {font-size: 1.1em;}
+nav li:nth-child(2n) {font-size: .8em;padding: 2px 10px 2px 20px;word-break: keep-all; }
+ul li:nth-child(8n+1).box i:hover[class^="hx-"]:before { margin-left: 200px;}
+ul li:nth-child(8n+2).box i:hover[class^="hx-"]:before { margin-left: 200px;}
+ul li:nth-child(8n+3).box i:hover[class^="hx-"]:before { margin-left: 100px;}
+ul li:nth-child(8n+6).box i:hover[class^="hx-"]:before { margin-left: -250px;}
+ul li:nth-child(8n+7).box i:hover[class^="hx-"]:before { margin-left: -380px;}
+ul li:nth-child(8n).box i:hover[class^="hx-"]:before { margin-left: -380px;}
+.box i:hover[class^="hx-"]:before{
+transition:all .4s 1s ease-out;transform: scale(8,8);box-shadow: .1px .1px 1px rgba(255,255,255,.1),-.1px -.1px 1px rgba(255,255,255,.1),1px 1px 1px 1000px rgba(0,0,0,.82);background: rgba(255,255,255,.82);z-index: 60;position: relative;
+cursor:wait;animation: color 5s;-moz-animation: color 5s;-webkit-animation: color 15s 1s linear infinite alternate;-o-animation: color 5s; }
+@keyframes color
+{   
+0%   {color:hsl(0,90%,50%);cursor:none;}
+8.3333333333333% {color:hsl(30,90%,50%);cursor:none;}
+16.666666666667%  {color:hsl(60,90%,50%);cursor:none;}
+25%  {color:hsl(90,90%,50%);cursor:none;}
+33.333333333333% {color:hsl(120,90%,50%);cursor:none;}
+41.666666666667%  {color:hsl(150,90%,50%);cursor:none;}
+50%  {color:hsl(180,90%,50%);cursor:none;}
+58.333333333333% {color:hsl(210,90%,50%);cursor:none;}
+66.666666666667%  {color:hsl(240,90%,50%);cursor:none;}
+75%  {color:hsl(270,90%,50%);cursor:none;}
+83.333333333333% {color:hsl(300,90%,50%);cursor:none;}
+91.666666666667%  {color:hsl(330,90%,50%);cursor:none;}
+100%  {color:hsl(360,90%,50%);cursor:none;}
+}
+hr  { margin:100px 10px 50px; border: dashed 1px #777;}
+hr + span {display: block;position: relative;z-index: 50;top: -72px;text-align: center;letter-spacing: 50px;line-height: 40px;font-size: 25px; }
+hr + span:after {content: " ";box-shadow: 220px 0px 0px 20px #FFF,295px 0px 0px 20px #FFF,370px 0px 0px 20px #FFF,445px 0px 0px 20px #FFF,520px 0px 0px 20px #FFF,595px 0px 0px 20px #FFF,670px 0px 0px 20px #FFF;z-index: 40;float: left;height: 20px; }
+fieldset { display: inline-block; border: teal 4px double; position: relative; padding-top: 0px;margin-left: 20px; }
+legend { font-size: 25px; font-weight: 700; padding: 0 8px;}
+fieldset p ,.ziku span:before { line-height: 1.5; font-size: 16px; margin: 0;text-align: left;}
+.logo { display: inline-block; color: teal; }
+.logo:before { font-size: 120px;}
+.ziku {text-align: center; padding: 40px 0 0; }
+.ziku a {text-decoration: none;color: teal; font-weight: 700;}
+.ziku legend span:before { transform: scale(2,2); font-size: 35px; position: relative; }
+.ziku legend span { width: 75px; display: inline-block; }
+</style>
+<script>
+window.onload = function() {
+var i1 = document.getElementsByTagName("i") ;
+for(x = 0; x < i1.length; x++) {
+var ix = i1[x],
+i2 = ix.cloneNode(true);
+var li = document.createElement("li");
+li.setAttribute("class","box");
+li.appendChild(i2);
+ix.parentNode.replaceChild(li,ix);
+li.insertAdjacentHTML('beforeend', '<div class="copy"><input />');
+var classx = ix.className;
+var input = li.getElementsByTagName("input")[0];
+input.setAttribute("type","text");
+input.setAttribute("readonly","readonly");
+input.setAttribute("onClick","this.select();");
+input.setAttribute("value","."+classx);
+var copy = li.getElementsByClassName("copy")[0];
+copy.setAttribute("title","."+classx);
+}
+}
+</script>
+</head>
+<body>
+<nav>
+<li><a href="#bank">支付和银行（54）</a></li>
+<li>
+<a href="#pay1">支付</a>
+<a href="#pay2">信用卡</a>
+<a href="#bank1">国有银行</a>
+<a href="#bank2">股份银行</a>
+<a href="#bank3">地方银行</a>
+<a href="#bank4">民营银行</a>
+<a href="#bank5">外资银行</a>
+</li>
+<li><a href="#im">社交和搜索（59）</a></li>
+<li>
+<a href="#im1">国内</a>
+<a href="#im2">国外</a>
+<a href="#im3">搜索引擎</a>
+</li>
+<li><a href="#llq">浏览器（35）</a></li>
+<li>
+<a href="#llq1">桌面</a>
+<a href="#llq2">移动</a>
+<a href="#llq3">相关</a>
+</li>
+<li><a href="#mp">手机和虚拟现实（47）</a></li>
+<li>
+<a href="#mp1">国产</a>
+<a href="#mp2">国外</a>
+<a href="#mp3">虚拟现实</a>
+</li>
+<li><a href="#hw">硬件和设备（56）</a></li>
+<li>
+<a href="#hw1">电脑和主机</a>
+<a href="#hw2">硬件</a>
+<a href="#hw3">芯片</a>
+<a href="#hw5">其他</a>
+</li>
+<li><a href="#op">电信运营商（14）</a></li>
+<li>
+<a href="#op1">国内</a>
+<a href="#op2">国外</a>
+</li>
+<li><a href="#os">操作系统（113）</a></li>
+<li>
+<a href="#os1">Ubuntu</a>
+<a href="#os2">类UNIX</a>
+<a href="#os3">国内</a>
+<a href="#os4">桌面环境</a>
+<a href="#os5">移动系统</a>
+<a href="#os6">其他</a>
+</li>
+<li><a href="#un">难以分类（171）</a></li>
+<li>
+<a href="#un1">湖心</a>
+<a href="#un2">版权</a>
+<a href="#un3">软件</a>
+<a href="#un4">网站</a>
+<a href="#un5">语言</a>
+<a href="#un6">其他</a>
+</li>
+</nav>
+<div class="content">
+<div class="ziku">
+<div class="hx-hxalpha logo"></div>
+<fieldset> 
+<legend><span class="hx-huxin"> </span>字库</legend>
+<p>更新（2016年12月10日）</p>
+<p>收录字符：549 个</p>
+<p><a href="https://github.com/hu2x/hx-font" target="_blank" ><span class="hx-github"></span> Fork me on Github</a></p>
+</fieldset>
+</div>
+</ul>
+<h2 id="bank">支付和银行（54）</h2>
+<h3 id="pay1">支付（4）</h3>
+<ul>
+<i class="hx-alipay" ></i>
+<i class="hx-wechatpay" ></i>
+<i class="hx-paypal"></i>
+<i class="hx-bitcoin"></i>
+</ul>
+<h3 id="pay2">信用卡（7）</h3>
+<ul>
+<i class="hx-unionpay"></i>
+<i class="hx-visa"></i>
+<i class="hx-mastercard"></i>
+<i class="hx-americanexpress"></i>
+<i class="hx-discover"></i>
+<i class="hx-jcb"></i>
+<i class="hx-dinersclub"></i>
+</ul>
+<h3 id="bank1">国有银行（8）</h3>
+<ul>
+<i class="hx-pbc"></i>
+<i class="hx-boc"></i>
+<i class="hx-abc"></i>
+<i class="hx-icbc"></i>
+<i class="hx-ccb"></i>
+<i class="hx-bocom"></i>
+<i class="hx-psbc"></i>
+<i class="hx-xinhe"></i>
+</ul>
+<h3 id="bank2">股份银行（12）</h3>
+<ul>
+<i class="hx-cmb"></i>
+<i class="hx-citic"></i>
+<i class="hx-hxb"></i>
+<i class="hx-ceb"></i>
+<i class="hx-spdb"></i>
+<i class="hx-cmbc"></i>
+<i class="hx-cib"></i>
+<i class="hx-cgb"></i>
+<i class="hx-pingan"></i>
+<i class="hx-zheshang"></i>
+<i class="hx-bohai"></i>
+<i class="hx-hengfeng"></i>
+</ul>
+<h3 id="bank3">地方银行（7）</h3>
+<ul>
+<i class="hx-beijing"></i>
+<i class="hx-shanghai"></i>
+<i class="hx-huarun"></i>
+<i class="hx-jinshang"></i>
+<i class="hx-ningbo"></i>
+<i class="hx-shengjing"></i>
+<i class="hx-hkb"></i>
+</ul>
+<h3 id="bank4">民营银行（2）</h3>
+<ul>
+<i class="hx-mybank"></i>
+<i class="hx-webank"></i>
+</ul>
+<h3 id="bank5">外资银行（14）</h3>
+<ul>
+<i class="hx-hsbc"></i>
+<i class="hx-sc"></i>
+<i class="hx-hengsheng"></i>
+<i class="hx-dbs"></i>
+<i class="hx-anz"></i>
+<i class="hx-bae"></i>
+<i class="hx-dahsing"></i>
+<i class="hx-uob"></i>
+<i class="hx-ocbc"></i>
+<i class="hx-ncb"></i>
+<i class="hx-fubon"></i>
+<i class="hx-taiwan"></i>
+<i class="hx-ubs"></i>
+<i class="hx-citi"></i>
+</ul>
+<h2 id="im">社交和搜索（59）</h2>
+<h3 id="im1">国内（16）</h3>
+<ul>
+<i class="hx-weibo"></i>
+<i class="hx-wechat"></i>
+<i class="hx-pyq"></i>
+<i class="hx-qq"></i>
+<i class="hx-qqo"></i>
+<i class="hx-qqtim"></i>
+<i class="hx-qzone"></i>
+<i class="hx-tieba"></i>
+<i class="hx-baidupan"></i>
+<i class="hx-huaji"></i>
+<i class="hx-163music"></i>
+<i class="hx-dingtalk"></i>
+<i class="hx-workwx"></i>
+<i class="hx-aliwangwang"></i>
+<i class="hx-qianniu"></i>
+<i class="hx-zhimaxy"></i>
+</ul>
+<h3 id="im2">国外（34）</h3>
+<ul>
+<i class="hx-github"></i>
+<i class="hx-twitter"></i>
+<i class="hx-facebook"></i>
+<i class="hx-gplus"></i>
+<i class="hx-tumblr"></i>
+<i class="hx-youtube"></i>
+<i class="hx-instagram"></i>
+<i class="hx-vk"></i>
+<i class="hx-wiki"></i>
+<i class="hx-pocket"></i>
+<i class="hx-flickr"></i>
+<i class="hx-skype"></i>
+<i class="hx-messenger"></i>
+<i class="hx-whatsapp"></i>
+<i class="hx-telegram"></i>
+<i class="hx-line"></i>
+<i class="hx-snapchat"></i>
+<i class="hx-viber"></i>
+<i class="hx-pinterest"></i>
+<i class="hx-spotify"></i>
+<i class="hx-lastfm"></i>
+<i class="hx-hangouts"></i>
+<i class="hx-googleallo"></i>
+<i class="hx-googleduo"></i>
+<i class="hx-evernote"></i>
+<i class="hx-linkedin"></i>
+<i class="hx-slack"></i>
+<i class="hx-flattr"></i>
+<i class="hx-gitter"></i>
+<i class="hx-deviantart"></i>
+<i class="hx-reddit"></i>
+<i class="hx-stackoverflow"></i>
+<i class="hx-airbnb"></i>
+<i class="hx-ubisoft"></i>
+</ul>
+<h3 id="im3">搜索引擎（9）</h3>
+<ul>
+<i class="hx-rss"></i>
+<i class="hx-search"></i>
+<i class="hx-baidu"></i>
+<i class="hx-baidubox"></i>
+<i class="hx-360so"></i>
+<i class="hx-sogou"></i>
+<i class="hx-bing"></i>
+<i class="hx-googleg"></i>
+<i class="hx-google"></i>
+</ul>
+<h2 id="llq">浏览器（35）</h2>
+<h3 id="llq1">桌面（24）</h3>
+<ul>
+<i class="hx-ie"></i>
+<i class="hx-edge"></i>
+<i class="hx-firefox"></i>
+<i class="hx-chrome"></i>
+<i class="hx-operanew"></i>
+<i class="hx-opera"></i>
+<i class="hx-safari"></i>
+<i class="hx-maxthon"></i>
+<i class="hx-mxcloud"></i>
+<i class="hx-360se"></i>
+<i class="hx-360chrome"></i>
+<i class="hx-qqllq"></i>
+<i class="hx-bdllq"></i>
+<i class="hx-sgllq"></i>
+<i class="hx-liebao"></i>
+<i class="hx-theworld"></i>
+<i class="hx-vivaldi"></i>
+<i class="hx-yandex"></i>
+<i class="hx-waterfox"></i>
+<i class="hx-netscape"></i>
+<i class="hx-qupzilla"></i>
+<i class="hx-midori"></i>
+<i class="hx-tor"></i>
+<i class="hx-webkit"></i>
+</ul>
+<h3 id="llq2">移动（4）</h3>
+<ul>
+<i class="hx-uc"></i>
+<i class="hx-bdmllq"></i>
+<i class="hx-dolphin"></i>
+<i class="hx-cmcm"></i>
+</ul>
+<h3 id="llq3">相关（7）</h3>
+<ul>
+<i class="hx-abp"></i>
+<i class="hx-ublock"></i>
+<i class="hx-ghostery"></i>
+<i class="hx-globe"></i>
+<i class="hx-internet"></i>
+<i class="hx-addons"></i>
+<i class="hx-webstore"></i>
+</ul>
+<h2 id="mp">手机和虚拟现实（47）</h2>
+<h3 id="mp1">国产（29）</h3>
+<ul>
+<i class="hx-huawei"></i>
+<i class="hx-honor"></i>
+<i class="hx-rongyao"></i>
+<i class="hx-nova"></i>
+<i class="hx-mi"></i>
+<i class="hx-vivo"></i>
+<i class="hx-oppo"></i>
+<i class="hx-oneplus"></i>
+<i class="hx-lenovo"></i>
+<i class="hx-lemeng"></i>
+<i class="hx-moto"></i>
+<i class="hx-zuk"></i>
+<i class="hx-zte"></i>
+<i class="hx-nubia"></i>
+<i class="hx-meizu"></i>
+<i class="hx-meizuicon"></i>
+<i class="hx-meilan"></i>
+<i class="hx-360"></i>
+<i class="hx-coolpad"></i>
+<i class="hx-lecool"></i>
+<i class="hx-le"></i>
+<i class="hx-meitu"></i>
+<i class="hx-doov"></i>
+<i class="hx-gionee"></i>
+<i class="hx-ktouch"></i>
+<i class="hx-aigo"></i>
+<i class="hx-jianguo"></i>
+<i class="hx-tcl"></i>
+<i class="hx-alcatel"></i>
+</ul>
+<h3 id="mp2">国外（13）</h3>
+<ul>
+<i class="hx-apple"></i>
+<i class="hx-samsung"></i>
+<i class="hx-galaxy"></i>
+<i class="hx-sony"></i>
+<i class="hx-xperia"></i>
+<i class="hx-sharp"></i>
+<i class="hx-lg"></i>
+<i class="hx-nokia"></i>
+<i class="hx-vertu"></i>
+<i class="hx-htc"></i>
+<i class="hx-blackberry"></i>
+<i class="hx-pixel"></i>
+<i class="hx-micromax"></i>
+</ul>
+<h3 id="mp3">虚拟现实（5）</h3>
+<ul>
+<i class="hx-vive"></i>
+<i class="hx-oculus"></i>
+<i class="hx-ozo"></i>
+<i class="hx-cardboard"></i>
+<i class="hx-daydream"></i>
+</ul>
+<h2 id="hw">硬件和设备（56）</h2>
+<h3 id="hw1">电脑和主机（11）</h3>
+<ul>
+<i class="hx-hp"></i>
+<i class="hx-dell"></i>
+<i class="hx-acer"></i>
+<i class="hx-asus"></i>
+<i class="hx-ibm"></i>
+<i class="hx-msi"></i>
+<i class="hx-asee"></i>
+<i class="hx-system76"></i>
+<i class="hx-preoator"></i>
+<i class="hx-xbox"></i>
+<i class="hx-playstation"></i>
+</ul>
+<h3 id="hw2">硬件（12）</h3>
+<ul>
+<i class="hx-gigabyte"></i>
+<i class="hx-kingston"></i>
+<i class="hx-wd"></i>
+<i class="hx-sandisk"></i>
+<i class="hx-seagate"></i>
+<i class="hx-toshiba"></i>
+<i class="hx-logi"></i>
+<i class="hx-razer"></i>
+<i class="hx-sorcair"></i>
+<i class="hx-aoc"></i>
+<i class="hx-onda"></i>
+<i class="hx-foxconn"></i>
+</ul>
+<h3 id="hw3">芯片（10）</h3>
+<ul>
+<i class="hx-intel"></i>
+<i class="hx-nvidia"></i>
+<i class="hx-amd"></i>
+<i class="hx-arm"></i>
+<i class="hx-qualcomm"></i>
+<i class="hx-snapdragon"></i>
+<i class="hx-mediatek"></i>
+<i class="hx-hisilicon"></i>
+<i class="hx-allwinner"></i>
+<i class="hx-loongson"></i>
+</ul>
+<h3 id="hw5">其他（23）</h3>
+<ul>
+<i class="hx-dji"></i>
+<i class="hx-gopro"></i>
+<i class="hx-raspberrypi"></i>
+<i class="hx-arduin"></i>
+<i class="hx-firefly"></i>
+<i class="hx-cisco"></i>
+<i class="hx-ericsson"></i>
+<i class="hx-alcatel"></i>
+<i class="hx-siemens"></i>
+<i class="hx-fujitsu"></i>
+<i class="hx-hitachi"></i>
+<i class="hx-hds"></i>
+<i class="hx-hpe"></i>
+<i class="hx-nec"></i>
+<i class="hx-oracle"></i>
+<i class="hx-philips"></i>
+<i class="hx-panasonic"></i>
+<i class="hx-hisense"></i>
+<i class="hx-haier"></i>
+<i class="hx-yamaha"></i>
+<i class="hx-yamaha2"></i>
+<i class="hx-kodak"></i>
+<i class="hx-dolby"></i>
+</ul>
+<h2 id="op">电信运营商（14）</h2>
+<h3 id="op1">国内（7）</h3>
+<ul>
+<i class="hx-cmcc"></i>
+<i class="hx-cmccand"></i>
+<i class="hx-unicom"></i>
+<i class="hx-unicom4g"></i>
+<i class="hx-unicomwo"></i>
+<i class="hx-chinatelecom"></i>
+<i class="hx-cthuango"></i>
+</ul>
+<h3 id="op2">国外（7）</h3>
+<ul>
+<i class="hx-verizon"></i>
+<i class="hx-att"></i>
+<i class="hx-sprint"></i>
+<i class="hx-tmobile"></i>
+<i class="hx-o2"></i>
+<i class="hx-orange"></i>
+<i class="hx-vodafone"></i>
+</ul>
+<h2 id="os">操作系统（113）</h2>
+<h3 id="os1">Ubuntu（8）</h3>
+<ul>
+<i class="hx-ubuntu"></i>
+<i class="hx-ubuntugnome"></i>
+<i class="hx-ubuntumate"></i>
+<i class="hx-kubuntu"></i>
+<i class="hx-lubuntu"></i>
+<i class="hx-xubuntu"></i>
+<i class="hx-gobuntu"></i>
+<i class="hx-ubuntustudio"></i>
+</ul>
+<h3 id="os2">类UNIX系统（63）</h3>
+<ul>
+<i class="hx-arch"></i>
+<i class="hx-mint"></i>
+<i class="hx-fedora"></i>
+<i class="hx-centos"></i>
+<i class="hx-gentoo"></i>
+<i class="hx-suse"></i>
+<i class="hx-opensuse"></i>
+<i class="hx-debian"></i>
+<i class="hx-redhat"></i>
+<i class="hx-zorin"></i>
+<i class="hx-elementary"></i>
+<i class="hx-manjaro"></i>
+<i class="hx-386bsd"></i>
+<i class="hx-freebsd"></i>
+<i class="hx-freebsdnew"></i>
+<i class="hx-openbsd"></i>
+<i class="hx-dragonflybsd"></i>
+<i class="hx-alpinelinux"></i>
+<i class="hx-antergos"></i>
+<i class="hx-budgieremix"></i>
+<i class="hx-chakra"></i>
+<i class="hx-chaletos"></i>
+<i class="hx-chapeau"></i>
+<i class="hx-clearos"></i>
+<i class="hx-clonezilla"></i>
+<i class="hx-coreos"></i>
+<i class="hx-easypeasy"></i>
+<i class="hx-frugalware"></i>
+<i class="hx-gnewsense"></i>
+<i class="hx-kali"></i>
+<i class="hx-knoppix"></i>
+<i class="hx-kodi"></i>
+<i class="hx-luneos"></i>
+<i class="hx-m0n0wall"></i>
+<i class="hx-mageia"></i>
+<i class="hx-mandriva"></i>
+<i class="hx-neon"></i>
+<i class="hx-nethserver"></i>
+<i class="hx-netrunner"></i>
+<i class="hx-nixos"></i>
+<i class="hx-openelec"></i>
+<i class="hx-openmandriva"></i>
+<i class="hx-opensolaris"></i>
+<i class="hx-parrot"></i>
+<i class="hx-parsix"></i>
+<i class="hx-pclinux"></i>
+<i class="hx-peppermint"></i>
+<i class="hx-pidora"></i>
+<i class="hx-pldlinux"></i>
+<i class="hx-puppy"></i>
+<i class="hx-qubes"></i>
+<i class="hx-reactos"></i>
+<i class="hx-rosa"></i>
+<i class="hx-sabayon"></i>
+<i class="hx-salix"></i>
+<i class="hx-savoirfaire"></i>
+<i class="hx-siduction"></i>
+<i class="hx-slackware"></i>
+<i class="hx-smartos"></i>
+<i class="hx-solus"></i>
+<i class="hx-steam"></i>
+<i class="hx-trisquel"></i>
+<i class="hx-trueos"></i>
+</ul>
+<h3 id="os3">国内（8）</h3>
+<ul>
+<i class="hx-ubuntukylin"></i>
+<i class="hx-kylin"></i>
+<i class="hx-neokylin"></i>
+<i class="hx-redflag"></i>
+<i class="hx-emind"></i>
+<i class="hx-anthon"></i>
+<i class="hx-deepin"></i>
+<i class="hx-qomo"></i>
+</ul>
+<h3 id="os4">桌面环境（4）</h3>
+<ul>
+<i class="hx-gnome"></i>
+<i class="hx-kde"></i>
+<i class="hx-xfce"></i>
+<i class="hx-mate"></i>
+</ul>
+<h3 id="os5">移动系统（11）</h3>
+<ul>
+<i class="hx-android"></i>
+<i class="hx-cyanogenmod"></i>
+<i class="hx-mokee"></i>
+<i class="hx-replicant"></i>
+<i class="hx-phoenixos"></i>
+<i class="hx-remixos"></i>
+<i class="hx-yunos"></i>
+<i class="hx-syberos"></i>
+<i class="hx-tizen"></i>
+<i class="hx-sailfishos"></i>
+<i class="hx-plasmamobile"></i>
+</ul>
+<h3 id="os6">其他（19）</h3>
+<ul>
+<i class="hx-win10"></i>
+<i class="hx-win7"></i>
+<i class="hx-winphone"></i>
+<i class="hx-ios"></i>
+<i class="hx-macos"></i>
+<i class="hx-linux"></i>
+<i class="hx-linuxfoundation"></i>
+<i class="hx-sun"></i>
+<i class="hx-solaris"></i>
+<i class="hx-amigaos"></i>
+<i class="hx-haiku"></i>
+<i class="hx-riscos"></i>
+<i class="hx-atari"></i>
+<i class="hx-freedos"></i>
+<i class="hx-dockrer"></i>
+<i class="hx-nexenta"></i>
+<i class="hx-virtualbox"></i>
+<i class="hx-vmware"></i>
+<i class="hx-gnu"></i>
+</ul>
+<h2 id="un">难以分类（171）</h2>
+<h3 id="un1">湖心（5）</h3>
+<ul>
+<i class="hx-hu"></i>
+<i class="hx-xin"></i>
+<i class="hx-huxin"></i>
+<i class="hx-hxalpha"></i>
+<i class="hx-hxbeta"></i>
+</ul>
+<h3 id="un2">版权（11）</h3>
+<ul>
+<i class="hx-cc"></i>
+<i class="hx-ccby"></i>
+<i class="hx-ccbync"></i>
+<i class="hx-ccbynd"></i>
+<i class="hx-ccbysa"></i>
+<i class="hx-ccbyncsa"></i>
+<i class="hx-copyright"></i>
+<i class="hx-opensource"></i>
+<i class="hx-gpl"></i>
+<i class="hx-agpl"></i>
+<i class="hx-lgpl"></i>
+</ul>
+<h3 id="un3">软件（50）</h3>
+<ul>
+<i class="hx-adobe"></i>
+<i class="hx-adobecc"></i>
+<i class="hx-adobeair"></i>
+<i class="hx-flash"></i>
+<i class="hx-acrobat"></i>
+<i class="hx-photoshop"></i>
+<i class="hx-premiere"></i>
+<i class="hx-illustrator"></i>
+<i class="hx-aftereffects"></i>
+<i class="hx-animate"></i>
+<i class="hx-audition"></i>
+<i class="hx-indesign"></i>
+<i class="hx-lightroom"></i>
+<i class="hx-dreamweaver"></i>
+<i class="hx-jetbrains"></i>
+<i class="hx-webstorm"></i>
+<i class="hx-phpstorm"></i>
+<i class="hx-intellij"></i>
+<i class="hx-rubymine"></i>
+<i class="hx-clion"></i>
+<i class="hx-pycharm"></i>
+<i class="hx-resharper"></i>
+<i class="hx-rider"></i>
+<i class="hx-appcode"></i>
+<i class="hx-autodesk"></i>
+<i class="hx-coreldraw"></i>
+<i class="hx-coreldraw2"></i>
+<i class="hx-atom"></i>
+<i class="hx-vs"></i>
+<i class="hx-git"></i>
+<i class="hx-symantec"></i>
+<i class="hx-letsencrypt"></i>
+<i class="hx-apache"></i>
+<i class="hx-nginx"></i>
+<i class="hx-gimp"></i>
+<i class="hx-inkscape"></i>
+<i class="hx-vlc"></i>
+<i class="hx-openoffice"></i>
+<i class="hx-mysql"></i>
+<i class="hx-eclipse"></i>
+<i class="hx-vim"></i>
+<i class="hx-opengl"></i>
+<i class="hx-vulkan"></i>
+<i class="hx-unity3d"></i>
+<i class="hx-openvpn"></i>
+<i class="hx-wine"></i>
+<i class="hx-kindle"></i>
+<i class="hx-wps"></i>
+<i class="hx-xunlei"></i>
+<i class="hx-youxiangdashi"></i>
+</ul>
+<h3 id="un4">网站（30）</h3>
+<ul>
+<i class="hx-canonical"></i>
+<i class="hx-amazon"></i>
+<i class="hx-microsoft"></i>
+<i class="hx-outlook"></i>
+<i class="hx-onenote"></i>
+<i class="hx-onedrive"></i>
+<i class="hx-mozilla"></i>
+<i class="hx-mdnn"></i>
+<i class="hx-mdn"></i>
+<i class="hx-wordpress"></i>
+<i class="hx-ghost"></i>
+<i class="hx-pixiv"></i>
+<i class="hx-bilibili"></i>
+<i class="hx-acniang"></i>
+<i class="hx-qieniang"></i>
+<i class="hx-qqnews"></i>
+<i class="hx-qqmail"></i>
+<i class="hx-azure"></i>
+<i class="hx-aliyun"></i>
+<i class="hx-qcloud"></i>
+<i class="hx-qiniu"></i>
+<i class="hx-ename"></i>
+<i class="hx-sfgreen"></i>
+<i class="hx-googleplay"></i>
+<i class="hx-gitlab"></i>
+<i class="hx-cnbeta"></i>
+<i class="hx-meiriyw"></i>
+<i class="hx-jianshu"></i>
+<i class="hx-zhihu"></i>
+<i class="hx-v2ex"></i>
+</ul>
+<h3 id="un5">语言（15）</h3>
+<ul>
+<i class="hx-php"></i>
+<i class="hx-jsf"></i>
+<i class="hx-angular"></i>
+<i class="hx-qt"></i>
+<i class="hx-swift"></i>
+<i class="hx-html5"></i>
+<i class="hx-w3c"></i>
+<i class="hx-rust"></i>
+<i class="hx-python"></i>
+<i class="hx-nodejs"></i>
+<i class="hx-java"></i>
+<i class="hx-javaduke"></i>
+<i class="hx-golang"></i>
+<i class="hx-perl"></i>
+<i class="hx-ruby"></i>
+</ul>
+<h3 id="un6">其他（60）</h3>
+<ul>
+<i class="hx-attachment2"></i>
+<i class="hx-attachment"></i>
+<i class="hx-bookmark"></i>
+<i class="hx-cloud"></i>
+<i class="hx-code"></i>
+<i class="hx-code2"></i>
+<i class="hx-comment"></i>
+<i class="hx-date"></i>
+<i class="hx-disable"></i>
+<i class="hx-download"></i>
+<i class="hx-elder"></i>
+<i class="hx-extension"></i>
+<i class="hx-extension2"></i>
+<i class="hx-filetypeblank"></i>
+<i class="hx-filetype"></i>
+<i class="hx-flag"></i>
+<i class="hx-flagwaving"></i>
+<i class="hx-folder"></i>
+<i class="hx-heart"></i>
+<i class="hx-heart2"></i>
+<i class="hx-home"></i>
+<i class="hx-leaf"></i>
+<i class="hx-left"></i>
+<i class="hx-right"></i>
+<i class="hx-link"></i>
+<i class="hx-link2"></i>
+<i class="hx-email"></i>
+<i class="hx-mailblank"></i>
+<i class="hx-mailempty"></i>
+<i class="hx-map"></i>
+<i class="hx-menu"></i>
+<i class="hx-mobile"></i>
+<i class="hx-msg"></i>
+<i class="hx-people"></i>
+<i class="hx-phone"></i>
+<i class="hx-contact"></i>
+<i class="hx-contactnew"></i>
+<i class="hx-pic"></i>
+<i class="hx-pic2"></i>
+<i class="hx-pill"></i>
+<i class="hx-pin"></i>
+<i class="hx-pindown"></i>
+<i class="hx-ribbon"></i>
+<i class="hx-safe"></i>
+<i class="hx-setting"></i>
+<i class="hx-setting2"></i>
+<i class="hx-share"></i>
+<i class="hx-share2"></i>
+<i class="hx-sharearrow"></i>
+<i class="hx-smile"></i>
+<i class="hx-starred"></i>
+<i class="hx-tags"></i>
+<i class="hx-art"></i>
+<i class="hx-todo"></i>
+<i class="hx-warn"></i>
+<i class="hx-widgets"></i>
+<i class="hx-x64"></i>
+<i class="hx-x64c"></i>
+<i class="hx-x86"></i>
+<i class="hx-x86c"></i>
+</ul>
+<hr ><span>我是有底线的。</span>
+</div>
+</body>
+</html>
