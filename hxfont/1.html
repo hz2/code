@@ -1,0 +1,17 @@
+<html> 
+  <head> 
+    <title>usually function</title> 
+  </head> 
+  <script> 
+function load(){ 
+  //下面两种方法效果是一样的 
+  document.getElementById("target").click(); 
+} 
+function test(){ 
+  alert("test"); 
+} 
+</script> 
+  <body onload="load()"> 
+    <button id="target" onclick="test()">test</button> 
+  </body> 
+<html>  

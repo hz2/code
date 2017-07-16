@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Demo</title>
+        <style>
+            html,body {
+                margin: 0;
+                padding: 0;
+            }
+
+            ul {
+                list-style: none;
+                margin: auto;
+            }
+
+            ul li {
+                float: left;
+                text-align: center;
+                border: 1px double cadetblue;
+                margin: 10px;
+                width: 320px;
+                height: 280px;
+                padding-top: 8px;
+            }
+
+            img {
+                width: 306px;
+                text-align: center;
+            }
+
+            a {
+                text-decoration: none;
+                color: cornflowerblue;
+                cursor: zoom-in;
+            }
+
+            .close {
+                display: none
+            }
+
+            a:target ~.close {
+                display: block;
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                top: 0;
+                left: 0;
+                background: rgba(0,0,0,.8);
+                cursor: pointer;
+            }
+
+            a:target img {
+                position: fixed;
+                z-index: 20;
+                width: 700px;
+                display: block;
+                margin: 0;
+                padding: 0;
+                cursor: default;
+                left: calc( 50% - 350px ) ;
+                top: calc( 50% - 270px ) ;
+                transition: all .4s ease-out;
+            }
+
+            a:target div {
+                margin-top: 245px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>
+                <a href="#pic1" id="pic1">
+                    <img src="./1.jpg">
+                    <div>图片一</div>
+                </a>
+                <a class="close" href="#close"></a>
+            </li>
+            <li>
+                <a href="#pic2" id="pic2">
+                    <img src="./2.jpg">
+                    <div>图片二</div>
+                </a>
+                <a class="close" href="#close"></a>
+            </li>
+            <li>
+                <a href="#pic3" id="pic3">
+                    <img src="./3.jpg">
+                    <div>图片三</div>
+                </a>
+                <a class="close" href="#close"></a>
+            </li>
+        </ul>
+    
+
+</body></html>

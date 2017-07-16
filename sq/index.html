@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <title>主页 </title>
-    <meta name="renderer" content="webkit">
-    <link rel="shortcut icon" href="home.svg">
-    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAANlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC3dmhyAAAAEnRSTlMAWA8YNTAdVDoEP0YITBNPKCLXpZcQAAAA0UlEQVRIx+2Q0a6DIBBEGXGFBUH9/5+9t3QF0xjcvrRp0/NCdpKTzGC+lzmE2TxBTsCSjZrJ4R+3GSUEYVTWRyUqhgwJB5asqF9w+zvp6i82L4ohHA7d5yhHmC/rey73KGca+vWx7snWHbLW+i2rQ6hfv9GGcK++0BliW/1KbwhBOB034WEIe+wMp7+NQhsSoRUQS+D1gr9XSlohsSQOcbsStgiX668S2yvBMtljei3I9R4heyErBYJAP+FbhXW6ESCEcq4d4ZxPEZjGLsTmVfwB2ygJMBAPvU0AAAAASUVORK5CYII=">
-    <link href="style.min.css" rel="stylesheet">
-    <script src="../assets/jquery-3.2.1.min.js"></script>
-</head>
-
-<body>
-    <div class="bg" id="bg"></div>
-    <div class="bg" id="bg-v"></div>
-    <script>
-        $(document).ready(function() {
+    <head>
+        <meta charset="utf-8">
+            <title>
+                主页
+            </title>
+            <meta content="webkit" name="renderer">
+                <link href="home.svg" rel="shortcut icon">
+                    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAANlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC3dmhyAAAAEnRSTlMAWA8YNTAdVDoEP0YITBNPKCLXpZcQAAAA0UlEQVRIx+2Q0a6DIBBEGXGFBUH9/5+9t3QF0xjcvrRp0/NCdpKTzGC+lzmE2TxBTsCSjZrJ4R+3GSUEYVTWRyUqhgwJB5asqF9w+zvp6i82L4ohHA7d5yhHmC/rey73KGca+vWx7snWHbLW+i2rQ6hfv9GGcK++0BliW/1KbwhBOB034WEIe+wMp7+NQhsSoRUQS+D1gr9XSlohsSQOcbsStgiX668S2yvBMtljei3I9R4heyErBYJAP+FbhXW6ESCEcq4d4ZxPEZjGLsTmVfwB2ygJMBAPvU0AAAAASUVORK5CYII=" rel="shortcut icon">
+                        <link href="style.min.css" rel="stylesheet">
+                            <script src="../assets/jquery-3.2.1.min.js">
+                            </script>
+                        </link>
+                    </link>
+                </link>
+            </meta>
+        </meta>
+    </head>
+    <body>
+        <div class="bg" id="bg">
+        </div>
+        <div class="bg" id="bg-v">
+        </div>
+        <script>
+            $(document).ready(function() {
             $.getJSON("site.json", function(site) {
                 $.each(site, function(i) {
                     $('ul').append("<li><a href=\"" + site[i][0] + "\" target=\"_blank\" title=\"" + i + "\"><i class=\"i-" + site[i][1] + "\" style=\"background:" + site[i][2] + ";\"></i></a></li>");
@@ -24,17 +32,37 @@
             var url = '//query.yahooapis.com/v1/public/yql' + '?q=' + encodeURIComponent('select * from json where url=@url') + '&url=' + encodeURIComponent('https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN') + '&format=json&callback=?';
             $.getJSON(url, function(result) {
                 var img = result.query.results.json.images;
-                $('#bg').css("background-image", "url(//www.bing.com/" + img.urlbase + "_1920x1080.jpg)");
+                $('#bg').css("background-image", "url(//www.bing.com" + img.urlbase + "_1920x1080.jpg)");
+                $('#bg').attr("data-image", "www.bing.com" + img.urlbase + "_1920x1080.jpg");
                 $('#bg-v').css("background-image", "url(//www.bing.com" + img.urlbase + "_1080x1920.jpg)");
                 $('#text').attr("title", img.copyright);
                 $('#text').after(" (" + img.enddate + ")");
             });
-        });
-    </script>
-    <ul></ul>
-    <footer>
-        © 图片来源 <a href="http://cn.bing.com/" target="_blank" id="text">Bing首页</a> ，维护支持 <a href="http://huching.net/2015/05/sq-update/" target="_blank">湖心</a> ^_^
-    </footer>
-</body>
 
+
+            $('#dl').click(function(event) {
+
+
+
+            });
+        });
+        </script>
+        <ul>
+        </ul>
+        <footer>
+            © 图片（下载）来源
+            <a href="http://cn.bing.com/" id="text" target="_blank">
+                Bing首页
+            </a>
+            |
+            <a id="dl" target="_blank" download="a.jpg" href="a.zin">
+                下载
+            </a>
+            ，维护支持
+            <a href="http://huching.net/2015/05/sq-update/" target="_blank">
+                湖心
+            </a>
+            ^_^
+        </footer>
+    </body>
 </html>
