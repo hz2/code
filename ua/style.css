@@ -15,11 +15,18 @@ body {
     background: #F98B00;
 }
 
-.icon-qihoo, .icon-q360se, .icon-q360so {
+.icon-qihoo,
+.icon-q360se,
+.icon-q360so {
     background: #0AD15D;
 }
 
-.icon-aigo, .icon-gionee, .icon-liebao, .icon-mi, .icon-uc, .icon-micromax {
+.icon-aigo,
+.icon-gionee,
+.icon-liebao,
+.icon-mi,
+.icon-uc,
+.icon-micromax {
     background: #f60;
 }
 
@@ -31,11 +38,17 @@ body {
     background: #00a3ee;
 }
 
-.icon-acer, .icon-android, .icon-dolphin, .icon-htc, .icon-midori {
+.icon-acer,
+.icon-android,
+.icon-dolphin,
+.icon-htc,
+.icon-midori {
     background: #A5CF4C;
 }
 
-.icon-apple, .icon-disable, .icon-operadev {
+.icon-apple,
+.icon-disable,
+.icon-operadev {
     background: #AFBDC4;
 }
 
@@ -46,11 +59,14 @@ body {
 .icon-ubuntu {
     background: #ff7e51;
 }
+
 .icon-focus {
     background: #AA5496;
 }
 
-.icon-bb, .icon-sony, .icon-steam {
+.icon-bb,
+.icon-sony,
+.icon-steam {
     background: #888;
 }
 
@@ -58,7 +74,12 @@ body {
     background: #128CAB;
 }
 
-.icon-baidu, .icon-bdpan, .icon-sgllq, .icon-kindle, .icon-tieba, .icon-zuk {
+.icon-baidu,
+.icon-bdpan,
+.icon-sgllq,
+.icon-kindle,
+.icon-tieba,
+.icon-zuk {
     background: #3B8CFF;
 }
 
@@ -74,11 +95,15 @@ body {
     background: #F7CC4F;
 }
 
-.icon-coolpad, .icon-galaxy {
+.icon-coolpad,
+.icon-galaxy {
     background: #3E27B2;
 }
 
-.icon-cyanogenmod, .icon-deepin, .icon-electron, .icon-search {
+.icon-cyanogenmod,
+.icon-deepin,
+.icon-electron,
+.icon-search {
     background: #45ddfd;
 }
 
@@ -106,19 +131,35 @@ body {
     background: #5391F5;
 }
 
-.icon-abp, .icon-googleg, .icon-bdmllq, .icon-cmusic, .icon-ktouch, .icon-jianguo {
+.icon-abp,
+.icon-googleg,
+.icon-bdmllq,
+.icon-cmusic,
+.icon-ktouch,
+.icon-jianguo {
     background: #EA4335;
 }
 
-.icon-lenovo, .icon-sharp, .icon-snapdragon, .icon-nubia, .icon-oneplus, .icon-tcl {
+.icon-lenovo,
+.icon-sharp,
+.icon-snapdragon,
+.icon-nubia,
+.icon-oneplus,
+.icon-tcl {
     background: #FF3423;
 }
 
 .icon-huawei {
-    background: #EC2728;
+    background: #F06567;
 }
 
-.icon-opera, .icon-operanew, .icon-vivaldi {
+.icon-redmi {
+    background: #F24C49;
+}
+
+.icon-opera,
+.icon-operanew,
+.icon-vivaldi {
     background: #f8192b;
 }
 
@@ -138,7 +179,8 @@ body {
     background: #01B4E1;
 }
 
-.icon-hxalpha, .icon-hxbetaq {
+.icon-hxalpha,
+.icon-hxbetaq {
     background: teal;
 }
 
@@ -150,7 +192,8 @@ body {
     background: #36C398;
 }
 
-.icon-lemeng, .icon-linux {
+.icon-lemeng,
+.icon-linux {
     background: #FFD133;
 }
 
@@ -162,11 +205,14 @@ body {
     background: #602E87;
 }
 
-.icon-meilan, .icon-meizu, .icon-meizuicon {
+.icon-meilan,
+.icon-meizu,
+.icon-meizuicon {
     background: #0cbbef;
 }
 
-.icon-microsoft, .icon-lumia {
+.icon-microsoft,
+.icon-lumia {
     background: #1AD1D1;
 }
 
@@ -178,7 +224,9 @@ body {
     background: #4381BB;
 }
 
-.icon-doov, .icon-lg, .icon-moto {
+.icon-doov,
+.icon-lg,
+.icon-moto {
     background: #DB1A83;
 }
 
@@ -190,7 +238,10 @@ body {
     background: #014485;
 }
 
-.icon-qqllq, .icon-qq, .icon-qqo, .icon-qqtim {
+.icon-qqllq,
+.icon-qq,
+.icon-qqo,
+.icon-qqtim {
     background: #38AFFF;
 }
 
@@ -262,15 +313,20 @@ body {
     background-color: #39b3d7;
 }
 
-.icon-winphone, .icon-xperia, .icon-le, .icon-macos {
+.icon-winphone,
+.icon-xperia,
+.icon-le,
+.icon-macos {
     background: #9C46E3;
 }
 
-.icon-x64r, .icon-x64c {
+.icon-x64r,
+.icon-x64c {
     background: #5fafff;
 }
 
-.icon-x86r, .icon-x86c {
+.icon-x86r,
+.icon-x86c {
     background: #E9D121;
 }
 
@@ -282,7 +338,14 @@ body {
     background: #008fd5;
 }
 
-.icon-oppo, .icon-coolapk, .icon-xbox, .icon-nova, .icon-lcllq, .icon-browser, .icon-system, .icon-pc {
+.icon-oppo,
+.icon-coolapk,
+.icon-xbox,
+.icon-nova,
+.icon-lcllq,
+.icon-browser,
+.icon-system,
+.icon-pc {
     background: #1ba631;
 }
 
@@ -290,7 +353,8 @@ body {
     background: #0be874;
 }
 
-#icon>div svg, #icon>div img {
+#icon>div svg,
+#icon>div img {
     width: 130px;
     height: 130px;
     margin: 35px;
@@ -382,7 +446,8 @@ body {
     #icon>div {
         height: calc( 1/3 * 100vh);
     }
-    #icon>div svg, #icon>div img {
+    #icon>div svg,
+    #icon>div img {
         height: 20vh;
         width: auto;
         max-width: 100%;
@@ -412,7 +477,8 @@ body {
         position: relative;
         box-shadow: 1px 1px 2px #BCBCBC;
     }
-    #icon>div svg, #icon>div img {
+    #icon>div svg,
+    #icon>div img {
         height: 20vw;
         margin: 5vw auto;
     }

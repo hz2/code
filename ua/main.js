@@ -35,8 +35,8 @@ if (/hahhaha2017/i.test(ua)) {
     ua_b = ["qqtim", "TIM " + RegExp.$2];
 } else if (ua.match(/qzone\/[\d\-A-z]+qz_(\d+\.+\d+)/i)) { // qzone
     ua_b = ["qzone", "QQ空间 " + RegExp.$1];
-} else if (ua.match(/qq\/\d+\.+\d+/i)) { // 腾讯qq
-    ua_b = ["qqo", v[0].split("/").join(" ")];
+} else if (ua.match(/(qq\/\d+\.+\d+)/i)) { // 腾讯qq
+    ua_b = ["qqo", RegExp.$1.replace("/", " ")];
 } else if (ua.match(/AlipayClient\/(\d+\.+\d+)/i)) { // 支付宝
     ua_b = ["alipay", "支付宝 " + RegExp.$1];
 } else if (ua.match(/dingtalk\/(\d+\.+\d+)/i)) { // 钉钉
@@ -67,22 +67,22 @@ if (/hahhaha2017/i.test(ua)) {
     ua_b = ["maxthon", "傲游 " + RegExp.$1];
 } else if (ua.match(/baidubrowser\/(\d+\.+\d+)/i)) { // 百度浏览器
     ua_b = ["bdllq", "百度浏览器 " + RegExp.$1];
-} else if (ua.match(/waterfox\/\d+/i)) { //水狐
-    ua_b = ["waterfox", v[0].split("/").join(" ")];
-} else if (ua.match(/palemoon\/\d+/i)) { //苍月
-    ua_b = ["palemoon", v[0].split("/").join(" ")];
-} else if (ua.match(/Focus\/[\d\.]+/i)) { // 火狐 focus
-    ua_b = ["firefox", v[0].split("/").join(" "), "focus"];
-} else if (ua.match(/firefox\/\d+/i)) { // 火狐系最后
-    ua_b = ["firefox", v[0].split("/").join(" ")];
+} else if (ua.match(/(waterfox\/\d+)/i)) { //水狐
+    ua_b = ["waterfox", RegExp.$1.replace("/", " ")];
+} else if (ua.match(/(palemoon\/\d+)/i)) { //苍月
+    ua_b = ["palemoon", RegExp.$1.replace("/", " ")];
+} else if (ua.match(/(Focus\/[\d\.]+)/i)) { // 火狐 focus
+    ua_b = ["firefox", RegExp.$1.replace("/", " "), "focus"];
+} else if (ua.match(/(firefox\/\d+)/i)) { // 火狐系最后
+    ua_b = ["firefox", RegExp.$1.replace("/", " ")];
 } else if (ua.match(/yabrowser\/(\d+\.+\d+)/i)) {
     ua_b = ["yandex", "Yandex " + RegExp.$1];
-} else if (ua.match(/midori\/(\d+\.+\d+)/i)) {
-    ua_b = ["midori", v[0].split("/").join(" ")];
-} else if (ua.match(/qupzilla\/(\d+\.+\d+)/i)) {
-    ua_b = ["qupzilla", v[0].split("/").join(" ")];
-} else if (ua.match(/Vivaldi\/(\d+\.+\d+)/i)) {
-    ua_b = ["vivaldi", v[0].split("/").join(" ")];
+} else if (ua.match(/(midori\/\d+\.+\d+)/i)) {
+    ua_b = ["midori", RegExp.$1.replace("/", " ")];
+} else if (ua.match(/(qupzilla\/\d+\.+\d+)/i)) {
+    ua_b = ["qupzilla", RegExp.$1.replace("/", " ")];
+} else if (ua.match(/(Vivaldi\/\d+\.+\d+)/i)) {
+    ua_b = ["vivaldi", RegExp.$1.replace("/", " ")];
 } else if (ua.match(/bidubrowser\/(\d+\.+\d+)/i)) {
     ua_b = ["bdllq", "百度浏览器 " + RegExp.$1];
 } else if (ua.match(/qqbrowser\/(\d+\.+\d+)/i)) {
@@ -109,10 +109,10 @@ if (/hahhaha2017/i.test(ua)) {
     ua_b = ["q360so", "360搜索"];
 } else if (/silk/i.test(ua)) {
     ua_b = ["silk", "Silk"];
-} else if (ua.match(/TheWorld\ \d+/i)) {
-    ua_b = ["theworld", v[0].split("/").join(" ")];
-} else if (ua.match(/(thunderbird|electron|qiyu|quark|HuohouBrowser|quickbrowser|nokiabrowser|miuibrowser|Otter)\/(\d+\.?\d+)/i)) { // 已知但没图标
-    ua_b = ["browser", v[0].split("/").join(" ")];
+} else if (ua.match(/(TheWorld\ \d+)/i)) {
+    ua_b = ["theworld", RegExp.$1.replace("/", " ")];
+} else if (ua.match(/((thunderbird|electron|qiyu|quark|HuohouBrowser|quickbrowser|nokiabrowser|miuibrowser|Otter)\/\d+\.?\d+)/i)) { // 已知但没图标
+    ua_b = ["browser", RegExp.$1.replace("/", " ")];
 } else if (/bingweb/i.test(ua)) {
     ua_b = ["bing", "Bing搜索"];
 } else if (/bing/i.test(ua)) {
@@ -123,30 +123,30 @@ if (/hahhaha2017/i.test(ua)) {
     ua_b = ["google", "谷歌爬虫"];
 } else if (/HaosouSpider|360spider/i.test(ua)) {
     ua_b = ["q360so", "360爬虫"];
-} else if (ua.match(/rv\:\d+/i)) {
-    ua_b = ["ie", v[0].replace(/rv/i, "IE").split(":").join(" ")];
-} else if (ua.match(/msie\ \d+/i)) {
-    ua_b = ["ie", v[0].replace(/MSIE/i, "IE")];
-} else if (ua.match(/edge\/\d+/i)) {
-    ua_b = ["edge", v[0].split("/").join(" ")];
+} else if (ua.match(/(rv\:\d+)/i)) {
+    ua_b = ["ie", RegExp.$1.replace(/rv/i, "IE").split(":").join(" ")];
+} else if (ua.match(/(msie\ \d+)/i)) {
+    ua_b = ["ie", RegExp.$1.replace(/MSIE/i, "IE")];
+} else if (ua.match(/(edge\/\d+)/i)) {
+    ua_b = ["edge", RegExp.$1.replace("/", " ")];
 } else if (ua.match(/mms\/(\d+\.+\d+)/i)) { // opera Neon浏览器
     ua_b = ["operaneon", "Opera NEON " + RegExp.$1];
 } else if (ua.match(/opr\/(\d+\.+\d+)[\S\ ]+developer/i)) { // opera 开发版
     ua_b = ["operanew", "Opera " + RegExp.$1, "operadev"];
 } else if (ua.match(/opr\/(\d+\.+\d+)/i)) { // opera 浏览器
     ua_b = ["operanew", "Opera " + RegExp.$1];
-} else if (ua.match(/opera\/\d+/i)) { // 旧版 opera 浏览器
-    ua_b = ["opera", v[0].split("/").join(" ")];
-} else if (ua.match(/Chromium\/\d+/i)) { // Chromium
-    ua_b = ["chrome", v[0].split("/").join(" "), "chromium"];
-} else if (ua.match(/chrome\/\d+/i)) { // chrome 是最后的
-    ua_b = ["chrome", v[0].split("/").join(" ")];
+} else if (ua.match(/(opera\/\d+)/i)) { // 旧版 opera 浏览器
+    ua_b = ["opera", RegExp.$1.replace("/", " ")];
+} else if (ua.match(/(Chromium\/\d+)/i)) { // Chromium
+    ua_b = ["chrome", RegExp.$1.replace("/", " "), "chromium"];
+} else if (ua.match(/(chrome\/\d+)/i)) { // chrome 是最后的
+    ua_b = ["chrome", RegExp.$1.replace("/", " ")];
 } else if (/android/i.test(ua) && /webkit/i.test(ua)) { // webkit
     ua_b = ["webkit", "Webkit"];
-} else if (ua.match(/safari\/\d+/i)) { // safari
-    ua_b = ["safari", v[0].split("/").join(" ")];
-} else if (ua.match(/webkit\/\d+/i)) { // webkit
-    ua_b = ["webkit", v[0].split("/").join(" ")];
+} else if (ua.match(/(safari\/\d+)/i)) { // safari
+    ua_b = ["safari", RegExp.$1.replace("/", " ")];
+} else if (ua.match(/(webkit\/\d+)/i)) { // webkit
+    ua_b = ["webkit", RegExp.$1.replace("/", " ")];
 } else { // 回退
     ua_b = ["browser", "未知"];
 }
@@ -215,7 +215,7 @@ if (/xbox one/i.test(ua)) {
     ua_h = ["mi", "红米", "redmi"];
 } else if (/mi |mi-/i.test(ua)) {
     ua_h = ["mi", "小米"];
-} else if (/mx\d+/i.test(ua)) {
+} else if (/mx\d+|PRO \d+/i.test(ua)) {
     ua_h = ["meizuicon", "魅族"];
 } else if (/huawei/i.test(ua)) {
     ua_h = ["huawei", "华为"];
