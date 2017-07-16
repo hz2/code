@@ -107,11 +107,13 @@ if (/hahhaha2017/i.test(ua)) {
     ua_b = ["q360chr", "360极速浏览器"];
 } else if (/360 mso/i.test(ua)) {
     ua_b = ["q360so", "360搜索"];
+} else if (/miuibrowser/i.test(ua)) { // 小米浏览器
+    ua_b = ["miuib", "小米浏览器"];
 } else if (/silk/i.test(ua)) {
     ua_b = ["silk", "Silk"];
 } else if (ua.match(/(TheWorld\ \d+)/i)) {
     ua_b = ["theworld", RegExp.$1.replace("/", " ")];
-} else if (ua.match(/((thunderbird|electron|qiyu|quark|HuohouBrowser|quickbrowser|nokiabrowser|miuibrowser|Otter)\/\d+\.?\d+)/i)) { // 已知但没图标
+} else if (ua.match(/((thunderbird|electron|qiyu|quark|HuohouBrowser|quickbrowser|nokiabrowser|Otter)\/\d+\.?\d+)/i)) { // 已知但没图标
     ua_b = ["browser", RegExp.$1.replace("/", " ")];
 } else if (/bingweb/i.test(ua)) {
     ua_b = ["bing", "Bing搜索"];
@@ -213,7 +215,7 @@ if (/xbox one/i.test(ua)) {
     ua_h = ["oppo", "OPPO"];
 } else if (/ HM|RedMi/i.test(ua)) {
     ua_h = ["mi", "红米", "redmi"];
-} else if (/mi |mi-/i.test(ua)) {
+} else if (/mi |mi-|xiaomi/i.test(ua)) {
     ua_h = ["mi", "小米"];
 } else if (/mx\d+|PRO \d+/i.test(ua)) {
     ua_h = ["meizuicon", "魅族"];
