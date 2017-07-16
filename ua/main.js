@@ -21,9 +21,6 @@ var ua = window.navigator.userAgent,
     icon_b,
     icon_s,
     icon_h,
-    v,
-    v1,
-    v2,
     res = "",
     i;
 // 浏览器
@@ -42,9 +39,11 @@ if (/hahhaha2017/i.test(ua)) {
 } else if (ua.match(/dingtalk\/(\d+\.+\d+)/i)) { // 钉钉
     ua_b = ["dingtalk", "钉钉 " + RegExp.$1];
 } else if (/weibo/i.test(ua)) { // weibo
-    ua_b = ["weibo", " 微博"];
+    ua_b = ["weibo", "微博"];
+} else if (/twitter/i.test(ua)) { // twitter
+    ua_b = ["twitter", "Twitter"];
 } else if (ua.match(/coolmarket\/(\d+\.+\d+)/i)) { // coolapk
-    ua_b = ["coolapk", "酷市场 " + RegExp.$1];
+    ua_b = ["coolapk", "酷安 " + RegExp.$1];
 } else if (ua.match(/tieba\/(\d+\.+\d+)/i)) { // tieba
     ua_b = ["tieba", "贴吧 " + RegExp.$1];
 } else if (/BaiduYunGuanJia/i.test(ua)) { // BaiduYunGuanJia
@@ -179,14 +178,14 @@ if (/nt 10/i.test(ua)) {
     ua_s = ["win", "Windows"];
 } else if (/ubuntu/i.test(ua)) {
     ua_s = ["ubuntu", "Ubuntu"];
-} else if (v1 = ua.match(/android\ [\d\.]+/i)) {
-    ua_s = ["android", v1];
-} else if (v1 = ua.match(/bb10|meego|symbian/i)) {
-    ua_s = ["system", v1[0]];
-} else if (v1 = ua.match(/tablet os/i)) {
-    ua_s = ["tablet", v1[0]];
-} else if (v1 = ua.match(/os\ [\d\.\_]+/i)) {
-    ua_s = ["ios", v1[0].split("_").join(".")];
+} else if (ua.match(/(android\ [\d\.]+)/i)) {
+    ua_s = ["android", RegExp.$1];
+} else if (ua.match(/(bb10|meego|symbian)/i)) {
+    ua_s = ["system", RegExp.$1];
+} else if (/tablet os/i.test(ua)) {
+    ua_s = ["tablet", "tablet"];
+} else if (ua.match(/(os\ [\d\.\_]+)/i)) {
+    ua_s = ["ios", RegExp.$1.split("_").join(".")];
 } else if (/mac os|macos/i.test(ua)) {
     ua_s = ["macos", "MacOS"];
 } else if (/linux/i.test(ua)) {
@@ -241,10 +240,10 @@ if (/xbox one/i.test(ua)) {
     ua_h = ["lenovo", "联想"];
 } else if (/bb10|rim/i.test(ua)) {
     ua_h = ["bb", "黑莓"];
-} else if (v2 = ua.match(/lumia\ \d\w+/i)) {
-    ua_h = ["lumia", v2[0]];
-} else if (v2 = ua.match(/nexus\ \d+/i)) {
-    ua_h = ["googleg", v2[0]];
+} else if (ua.match(/(lumia\ \d\w+)/i)) {
+    ua_h = ["lumia", RegExp.$1];
+} else if (ua.match(/(nexus\ \d+)/i)) {
+    ua_h = ["googleg", RegExp.$1];
 } else if (/x64|win64|wow64/i.test(ua)) {
     ua_h = ["x64r", "64 位"];
 } else if (/ipad/i.test(ua)) {
