@@ -37,7 +37,9 @@
                 $('#bg-v').css("background-image", "url(//www.bing.com" + img.urlbase + "_1080x1920.jpg)");
                 $('#text').attr("title", img.copyright);
                 $('#text').after(" (" + img.enddate + ")");
+                $('#dl').attr("href", "//www.bing.com" + img.urlbase + "_1920x1080.jpg");
             });
+<<<<<<< HEAD
 
 
             $('#dl').click(function(event) {
@@ -66,3 +68,14 @@
         </footer>
     </body>
 </html>
+=======
+        });
+    </script>
+    <ul></ul>
+    <footer>
+        © 图片来源 <a href="http://cn.bing.com/" target="_blank" id="text">Bing首页</a> | <a target="_blank" id="dl">下载</a>，维护支持 <a href="http://huching.net/2015/05/sq-update/" target="_blank">湖心</a> ^_^
+    </footer>
+</body>
+
+</html>
+>>>>>>> master
