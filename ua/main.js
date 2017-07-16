@@ -26,45 +26,45 @@ var ua = window.navigator.userAgent,
 // 浏览器
 if (/hahhaha2017/i.test(ua)) {
     ua_b = ["", ""];
-} else if (ua.match(/micromessenger\/(\d+\.+\d+)/i)) { // weixin
+} else if (ua.match(/micromessenger\/(\d+\.\d+)/i)) { // weixin
     ua_b = ["wechat", "微信 " + RegExp.$1];
-} else if (ua.match(/(tim)[\d\.]*\/(\d+\.+\d+)/i)) { // tim
+} else if (ua.match(/(tim)[\d\.]*\/(\d+\.\d+)/i)) { // tim
     ua_b = ["qqtim", "TIM " + RegExp.$2];
-} else if (ua.match(/qzone\/[\d\-A-z]+qz_(\d+\.+\d+)/i)) { // qzone
+} else if (ua.match(/qzone\/[\d\-A-z]+qz_(\d+\.\d+)/i)) { // qzone
     ua_b = ["qzone", "QQ空间 " + RegExp.$1];
-} else if (ua.match(/(qq\/\d+\.+\d+)/i)) { // 腾讯qq
+} else if (ua.match(/(qq\/\d+\.\d+)/i)) { // 腾讯qq
     ua_b = ["qqo", RegExp.$1.replace("/", " ")];
-} else if (ua.match(/AlipayClient\/(\d+\.+\d+)/i)) { // 支付宝
+} else if (ua.match(/AlipayClient\/(\d+\.\d+)/i)) { // 支付宝
     ua_b = ["alipay", "支付宝 " + RegExp.$1];
-} else if (ua.match(/dingtalk\/(\d+\.+\d+)/i)) { // 钉钉
+} else if (ua.match(/dingtalk\/(\d+\.\d+)/i)) { // 钉钉
     ua_b = ["dingtalk", "钉钉 " + RegExp.$1];
 } else if (/weibo/i.test(ua)) { // weibo
     ua_b = ["weibo", "微博"];
 } else if (/twitter/i.test(ua)) { // twitter
     ua_b = ["twitter", "Twitter"];
-} else if (ua.match(/coolmarket\/(\d+\.+\d+)/i)) { // coolapk
+} else if (ua.match(/coolmarket\/(\d+\.\d+)/i)) { // coolapk
     ua_b = ["coolapk", "酷安 " + RegExp.$1];
-} else if (ua.match(/tieba\/(\d+\.+\d+)/i)) { // tieba
+} else if (ua.match(/tieba\/(\d+\.\d+)/i)) { // tieba
     ua_b = ["tieba", "贴吧 " + RegExp.$1];
 } else if (/BaiduYunGuanJia/i.test(ua)) { // BaiduYunGuanJia
     ua_b = ["bdpan", "百度网盘"];
-} else if (ua.match(/liebaofast\/(\d+\.+\d+)/i)) { // liebao
+} else if (ua.match(/liebaofast\/(\d+\.\d+)/i)) { // liebao
     ua_b = ["liebao", "猎豹 " + RegExp.$1];
-} else if (ua.match(/sogoumobilebrowser\/(\d+\.+\d+)/i)) { //  sogou 浏览器
+} else if (ua.match(/sogoumobilebrowser\/(\d+\.\d+)/i)) { //  sogou 浏览器
     ua_b = ["sgllq", "搜狗 " + RegExp.$1];
 } else if (/sogousearch|sogou/i.test(ua)) { // sogou 搜索
     ua_b = ["sogou", "搜狗搜索"];
-} else if (ua.match(/(bdmobile|baiduboxapp)\/(\d+\.+\d+)+/i)) { // 掌上百度
+} else if (ua.match(/(bdmobile|baiduboxapp)\/(\d+\.\d+)+/i)) { // 掌上百度
     ua_b = ["baidu", "掌上百度 " + RegExp.$2];
-} else if (ua.match(/bdbrowser\/(\d+\.+\d+)/i)) { // 百度手机浏览器
+} else if (ua.match(/bdbrowser\/(\d+\.\d+)/i)) { // 百度手机浏览器
     ua_b = ["bdmllq", "百度浏览器 " + RegExp.$1];
-} else if (ua.match(/mobile[\w\d\.\/\ ]+baidubrowser\/(\d+\.+\d+)/i)) { // 百度手机浏览器
+} else if (ua.match(/mobile[\w\d\.\/\ ]+baidubrowser\/(\d+\.\d+)/i)) { // 百度手机浏览器
     ua_b = ["bdmllq", "百度浏览器 " + RegExp.$1];
-} else if (ua.match(/lebrowser\/(\d+\.+\d+)/i)) { // 绿茶浏览器
+} else if (ua.match(/lebrowser\/(\d+\.\d+)/i)) { // 绿茶浏览器
     ua_b = ["lcllq", "绿茶浏览器 " + RegExp.$1];
-} else if (ua.match(/mxbrowser\/(\d+\.+\d+)/i)) { // 傲游
+} else if (ua.match(/mxbrowser\/(\d+\.\d+)/i)) { // 傲游
     ua_b = ["maxthon", "傲游 " + RegExp.$1];
-} else if (ua.match(/baidubrowser\/(\d+\.+\d+)/i)) { // 百度浏览器
+} else if (ua.match(/baidubrowser\/(\d+\.\d+)/i)) { // 百度浏览器
     ua_b = ["bdllq", "百度浏览器 " + RegExp.$1];
 } else if (ua.match(/(waterfox\/\d+)/i)) { //水狐
     ua_b = ["waterfox", RegExp.$1.replace("/", " ")];
@@ -74,27 +74,27 @@ if (/hahhaha2017/i.test(ua)) {
     ua_b = ["firefox", RegExp.$1.replace("/", " "), "focus"];
 } else if (ua.match(/(firefox\/\d+)/i)) { // 火狐系最后
     ua_b = ["firefox", RegExp.$1.replace("/", " ")];
-} else if (ua.match(/yabrowser\/(\d+\.+\d+)/i)) {
+} else if (ua.match(/yabrowser\/(\d+\.\d+)/i)) {
     ua_b = ["yandex", "Yandex " + RegExp.$1];
-} else if (ua.match(/(midori\/\d+\.+\d+)/i)) {
+} else if (ua.match(/(midori\/\d+\.\d+)/i)) {
     ua_b = ["midori", RegExp.$1.replace("/", " ")];
-} else if (ua.match(/(qupzilla\/\d+\.+\d+)/i)) {
+} else if (ua.match(/(qupzilla\/\d+\.\d+)/i)) {
     ua_b = ["qupzilla", RegExp.$1.replace("/", " ")];
-} else if (ua.match(/(Vivaldi\/\d+\.+\d+)/i)) {
+} else if (ua.match(/(Vivaldi\/\d+\.\d+)/i)) {
     ua_b = ["vivaldi", RegExp.$1.replace("/", " ")];
-} else if (ua.match(/bidubrowser\/(\d+\.+\d+)/i)) {
+} else if (ua.match(/bidubrowser\/(\d+\.\d+)/i)) {
     ua_b = ["bdllq", "百度浏览器 " + RegExp.$1];
-} else if (ua.match(/qqbrowser\/(\d+\.+\d+)/i)) {
+} else if (ua.match(/qqbrowser\/(\d+\.\d+)/i)) {
     ua_b = ["qqllq", "QQ浏览器 " + RegExp.$1];
-} else if (ua.match(/(UCBrowser|UBrowser)\/(\d+\.+\d+)/i)) {
+} else if (ua.match(/(UCBrowser|UBrowser)\/(\d+\.\d+)/i)) {
     ua_b = ["uc", "UC浏览器 " + RegExp.$2];
-} else if (ua.match(/UCweb(\d+\.+\d+)/i)) {
+} else if (ua.match(/UCweb(\d+\.\d+)/i)) {
     ua_b = ["uc", "UC浏览器 " + RegExp.$1];
-} else if (ua.match(/dolphin[A-Za-z]+\/ (\d+\.+\d+)/i)) {
+} else if (ua.match(/dolphin[A-Za-z]+\/ (\d+\.\d+)/i)) {
     ua_b = ["dolphin", "海豚浏览器 " + RegExp.$1];
-} else if (ua.match(/maxthon\/(\d+\.+\d+)/i)) {
+} else if (ua.match(/maxthon\/(\d+\.\d+)/i)) {
     ua_b = ["maxthon", "遨游 " + RegExp.$1];
-} else if (ua.match(/thunder\/(\d+\.+\d+)/i)) {
+} else if (ua.match(/thunder\/(\d+\.\d+)/i)) {
     ua_b = ["xunlei", "迅雷 " + RegExp.$1];
 } else if (/LBBROWSER|liebaofast|ACHEETAHI/i.test(ua)) {
     ua_b = ["liebao", "猎豹"];
@@ -130,11 +130,11 @@ if (/hahhaha2017/i.test(ua)) {
     ua_b = ["ie", RegExp.$1.replace(/MSIE/i, "IE")];
 } else if (ua.match(/(edge\/\d+)/i)) {
     ua_b = ["edge", RegExp.$1.replace("/", " ")];
-} else if (ua.match(/mms\/(\d+\.+\d+)/i)) { // opera Neon浏览器
+} else if (ua.match(/mms\/(\d+\.\d+)/i)) { // opera Neon浏览器
     ua_b = ["operaneon", "Opera NEON " + RegExp.$1];
-} else if (ua.match(/opr\/(\d+\.+\d+)[\S\ ]+developer/i)) { // opera 开发版
+} else if (ua.match(/opr\/(\d+\.\d+)[\S\ ]+developer/i)) { // opera 开发版
     ua_b = ["operanew", "Opera " + RegExp.$1, "operadev"];
-} else if (ua.match(/opr\/(\d+\.+\d+)/i)) { // opera 浏览器
+} else if (ua.match(/opr\/(\d+\.\d+)/i)) { // opera 浏览器
     ua_b = ["operanew", "Opera " + RegExp.$1];
 } else if (ua.match(/(opera\/\d+)/i)) { // 旧版 opera 浏览器
     ua_b = ["opera", RegExp.$1.replace("/", " ")];
@@ -185,7 +185,7 @@ if (/nt 10/i.test(ua)) {
 } else if (/tablet os/i.test(ua)) {
     ua_s = ["tablet", "tablet"];
 } else if (ua.match(/(os\ [\d\.\_]+)/i)) {
-    ua_s = ["ios", RegExp.$1.split("_").join(".")];
+    ua_s = ["ios", RegExp.$1.replace("_", ".")];
 } else if (/mac os|macos/i.test(ua)) {
     ua_s = ["macos", "MacOS"];
 } else if (/linux/i.test(ua)) {
@@ -240,9 +240,9 @@ if (/xbox one/i.test(ua)) {
     ua_h = ["lenovo", "联想"];
 } else if (/bb10|rim/i.test(ua)) {
     ua_h = ["bb", "黑莓"];
-} else if (ua.match(/(lumia\ \d\w+)/i)) {
+} else if (ua.match(/(lumia\ \w+)/i)) {
     ua_h = ["lumia", RegExp.$1];
-} else if (ua.match(/(nexus\ \d+)/i)) {
+} else if (ua.match(/(nexus\ \w+)/i)) {
     ua_h = ["googleg", RegExp.$1];
 } else if (/x64|win64|wow64/i.test(ua)) {
     ua_h = ["x64r", "64 位"];
