@@ -1,8 +1,8 @@
-(function () {
+(function() {
     "use strict";
     /*global $ */
     // Math
-    $(document).ready(function () {
+    $(document).ready(function() {
 
         function inCalc(mathString) {
             var a = mathString,
@@ -148,7 +148,7 @@
         var zero = 0;
         $("#calc_toggle").text("展开");
         $("#calc_his li:gt(4)").css("display", "none");
-        $("#calc").on("input", function () {
+        $("#calc").on("input", function() {
             var newInput = $("#calc").val().split(" ").join(""),
                 calcResult;
             if (newInput === "") {
@@ -184,12 +184,12 @@
                 $("#calc_his li:gt(9)").remove();
             }
             $("#calc_his li:has(span)").hover( // hover事件，添加回退按钮
-                function () {
+                function() {
                     if ($(".index_his_tip").length === 0) {
                         $(this).append("<span class=\"index_his_tip\">回退</span>");
                     }
                 },
-                function () {
+                function() {
                     $(this).children(".index_his_tip").remove();
                 }
             );
@@ -197,7 +197,7 @@
                 $("#calc_his li:gt(4)").css("display", "none");
 
             }
-            $("#calc_his li:has(span)").on("click", function () { // li点击事件
+            $("#calc_his li:has(span)").on("click", function() { // li点击事件
                 $("#calc").val($(this).children(".myinput_his").text());
                 $("#calc_result").text($(this).children(".result_his").text());
                 $("#calc_tip2").text("");
@@ -206,13 +206,13 @@
 
         });
 
-        $("#calc_clear").on("click", function () { //清空
+        $("#calc_clear").on("click", function() { //清空
             $("#calc_his li").empty().removeAttr("class");
             $("#calc_his li").unbind("click");
             $("#calc_his li:has(span)").unbind("hover");
             return (zero = 0);
         });
-        $("#calc_reset").on("click", function () { //归零
+        $("#calc_reset").on("click", function() { //归零
             $("#calc_his li").empty().removeAttr("class");
             $("#calc_his li").unbind("click");
             $("#calc_his li:has(span)").unbind("hover");
@@ -222,7 +222,7 @@
             $("#calc").val("");
             return (zero = 0);
         });
-        $("#calc_toggle").click(function () { // 展开和收起事件
+        $("#calc_toggle").click(function() { // 展开和收起事件
             if ($("#calc_toggle").text() === "收起") {
                 $("#calc_toggle").text("展开");
                 $("#calc_his li:gt(4)").slideUp(300, "linear");
@@ -237,7 +237,7 @@
 
 
         // 二进制
-        $("input#type_bin").on("input", function () {
+        $("input#type_bin").on("input", function() {
             var data_bin = $("#type_bin").val().split(" ").join("");
             if (data_bin.match(/[\D2-9]+/g) !== null) {
                 $("#hex_tip").html("请输入 <kbd>0</kbd> 到 <kbd>1</kbd> 范围内的字符").attr("class", "error");
@@ -252,7 +252,7 @@
             }
         });
         // 八进制
-        $("input#type_oct").on("input", function () {
+        $("input#type_oct").on("input", function() {
             var data_oct = $("#type_oct").val().split(" ").join("");
             if (data_oct.match(/[\D89]+/g) !== null) {
                 $("#hex_tip").html("请输入 <kbd>0</kbd> 到 <kbd>7</kbd> 范围内的字符").attr("class", "error");
@@ -267,7 +267,7 @@
             }
         });
         // 十进制
-        $("input#type_dec").on("input", function () {
+        $("input#type_dec").on("input", function() {
             var data_dec = $("#type_dec").val().split(" ").join("");
             if (data_dec.match(/\D+/g) !== null) {
                 $("#hex_tip").html("请输入 <kbd>0</kbd> 到 <kbd>9</kbd> 范围内的字符").attr("class", "error");
@@ -283,7 +283,7 @@
 
         });
         // 十六进制
-        $("input#type_hex").on("input", function () {
+        $("input#type_hex").on("input", function() {
             var data_hex = $("#type_hex").val().split(" ").join("");
             if (data_hex.match(/[g-zG-Z\W]+/g) !== null) {
                 $("#hex_tip").html("请输入数字字符及 <kbd>A</kbd> 到 <kbd>F</kbd> 范围内的字母").attr("class", "error");
@@ -298,14 +298,32 @@
             }
         });
         // uri编码
-        $("#type_uriencode").on("input", function () {
+        $("#type_uriencode").on("input", function() {
             var uriencode_val = $("#type_uriencode").val();
             $("#type_uridecode").val(encodeURI(uriencode_val));
         });
         // uri解码
-        $("#type_uridecode").on("input", function () {
+        $("#type_uridecode").on("input", function() {
             var uridecode_val = $("#type_uridecode").val();
             $("#type_uriencode").val(decodeURI(uridecode_val));
+        });
+
+        // Unicode字符互转
+        // 添加正則 检测输入合法性
+        $("#type_charcode").on("input", function() {
+            let getChar = $("#type_charcode").val();
+            $("#type_unicode").val(getChar.split("").map(val => "\\u" + ("00" + val.charCodeAt().toString(16)).slice(-4)).join(""));
+            $("#type_htmlcode").val(getChar.split("").map(val => "\&#" + val.charCodeAt() + "\;").join(""));
+        });
+        $("#type_unicode").on("input", function() {
+            let getUni = $("#type_unicode").val();
+            $("#type_charcode").val(getUni.split("\\u").map(x => String.fromCharCode(parseInt(x, 16))).splice(1).join(""));
+            $("#type_htmlcode").val(getUni.split("\\u").map(x => "&#" + parseInt(x, 16) + ";").splice(1).join(""));
+        });
+        $("#type_htmlcode").on("input", function() { //处理输入十六进制的
+            let getHtml = $("#type_htmlcode").val();
+            $("#type_unicode").val(getHtml.split(/\W+/g).filter(x => x !== "").map(x => "\\u" + ("00" + (x * 1).toString(16)).slice(-4)).join(""));
+            $("#type_charcode").val(getHtml.split(/\W+/g).filter(x => x !== "").map(x => String.fromCharCode(x)).join(""));
         });
 
 

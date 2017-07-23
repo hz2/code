@@ -48,7 +48,7 @@
     </ul>
     <h2>网址编码</h2>
     <div id="hex_tip">输入数字，自动转化成其他进制</div>
-    <ul id="uri">
+    <ul class="uncode">
         <li>
             <div>编码</div>
             <input type="text" id="type_uriencode" placeholder="中文">
@@ -58,45 +58,51 @@
             <input type="text" id="type_uridecode" placeholder="%E4%B8%AD%E6%96%87">
         </li>
     </ul>
-    <h2>字符转Unicode</h2>
-    <div id="hex_tip">输入数字，自动转化成其他进制</div>
-    <ul id="uri">
+    <h2>Unicode 编码</h2>
+    <div>输入字符，自动获取 Unicode 编码</div>
+    <ul class="uncode">
         <li>
-            <div>编码</div>
-            <input type="text" id="type_uriencode" placeholder="中文">
+            <div>字符</div>
+            <textarea id="type_charcode" placeholder="字符"></textarea>
         </li>
         <li>
-            <div>解码</div>
-            <input type="text" id="type_uridecode" placeholder="%E4%B8%AD%E6%96%87">
+            <div>Unicode 编码</div>
+            <textarea id="type_unicode" placeholder="\u5b57\u7b26"></textarea>
+        </li>
+        <li>
+            <div>HTML 实体</div>
+            <textarea id="type_htmlcode" placeholder="&amp;#23383;&amp;#31526;"></textarea>
         </li>
     </ul>
-	
-    <h2>IP 转 数字地址</h2>
+
+    <!-- <h2>IP 转 数字地址</h2>
     <div id="hex_tip">输入数字，自动转化成其他进制</div>
     <ul id="uri">
         <li>
             <div>IP 地址</div>
             <input type="text" name="ipaddr" placeholder="IP">
         </li>
-		<button id = "ip2num" onclick =ip2num() >开始转换</button>
+        <button id="ip2num" onclick=ip2num()>开始转换</button>
         <li>
             <div>数字地址</div>
-			<a href="" id="numaddr" target="_blank"></a>
-			
+            <a href="" id="numaddr" target="_blank"></a>
+
         </li>
     </ul>
-	<script>
-	// ip to address
-	function ip2num(){
-	var input_ip = document.getElementsByName("ipaddr")[0].value;
-	var numaddr = input_ip.split(".").map( x => { x = parseInt(x, 10).toString(16) ;x.length === 1? x = "0" + x:x;return x} ).join("");
-	document.getElementById("numaddr").setAttribute("href","http://" + parseInt( numaddr , 16));
-	document.getElementById("numaddr").innerHTML = "http://" + parseInt( numaddr , 16)
-	
-	}
-	
-	
-	</script>	
+    <script>
+        // ip to address
+        function ip2num() {
+            var input_ip = document.getElementsByName("ipaddr")[0].value;
+            var numaddr = input_ip.split(".").map(x => {
+                x = parseInt(x, 10).toString(16);
+                x.length === 1 ? x = "0" + x : x;
+                return x
+            }).join("");
+            document.getElementById("numaddr").setAttribute("href", "http://" + parseInt(numaddr, 16));
+            document.getElementById("numaddr").innerHTML = "http://" + parseInt(numaddr, 16)
+
+        }
+    </script> -->
     <script type="text/javascript" src="main_math.js"></script>
 </body>
 

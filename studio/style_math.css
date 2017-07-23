@@ -3,6 +3,7 @@ body {
     font-size: 16px;
     color: #666;
 }
+
 input#calc {
     width: 250px;
     height: 30px;
@@ -18,7 +19,7 @@ input#calc {
     border-radius: 4px;
 }
 
-#calc_tip ,
+#calc_tip,
 #hex_tip {
     margin: 10px 0;
     padding: 3px 8px;
@@ -126,7 +127,10 @@ input#calc {
 #calc_his li:not(.input_his):hover .index_his_tip {
     display: none;
 }
+
+
 /* 进制转换 */
+
 #hex ul {
     margin: 15px 0;
     padding: 0;
@@ -143,18 +147,26 @@ input#calc {
     margin-top: 10px;
     text-transform: uppercase;
 }
-#uri li  {
+
+.uncode li {
     width: 650px;
     list-style: none;
     display: block;
     margin-top: 10px;
 }
-#uri li input {
+
+.uncode li input,
+.uncode li textarea {
     width: 500px;
 }
-#uri li input ,
-#uri li div {
+
+.uncode li input,
+.uncode li div {
     display: inline-block;
     margin-right: 15px;
 }
 
+.uncode li textarea {
+    display: block;
+    margin-top: 10px;
+}

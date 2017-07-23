@@ -1,0 +1,17 @@
+body {
+    margin: 100px;
+    font-size: 16px;
+    color: #666;
+}
+
+li div {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+li {
+    width: 650px;
+    list-style: none;
+    display: block;
+    margin-top: 10px;
+}
