@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="none">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Doc</title>
+    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABQ0lEQVRIid2UrU4DQRSFKxAYCLKiYkUlTUgg8ALIigpcDQ/QBCQk7Oa7g9og+gQNAoFElB+JIeER8CBKgkAgEIhBcCeZ8LO9u2VDwiTX7J57vtkzs7fR+LcLSIAD4Ax4AJ6AMXAILM9iPC8iO8Ad4H+oexHZB5aqAE4io1OgB7S0evosvL8C5sqYb2vjM7BVoOsCE9XuWc1bauyLzD9BPPAGrFgAuyEW044+ekJcQ4t4BHgR6VsBItIPZ2EB3ALeOdexApxznXCr8jxfqA0gIo/A4jTACPBZllWJ6GaqeMZDPraIE+BFG7oG/WZ0TdvWHQ20aVIEUfPwox2ZzKPmcYlR4XVmNctCBlFc39UrMIwGYiVIwtdxfa3GbdU0Z4JYVpqmqyFWETkH1n8dAqwBF/oll865jTogcVy2EV4RUo/5n613DqlWf6aZvXYAAAAASUVORK5CYII=">
+    <style type="text/css">
+        html {
+            font-size: 16px;
+        }
+
+        @media all and (orientation: portrait) {
+            html {
+                font-size: 12px;
+            }
+        }
+
+        body {
+            cursor: default;
+            background-color: lightcyan;
+            background-color: rgb(214, 255, 243);
+            font-family: sans-serif;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        .box {
+            position: relative;
+            text-align: center;
+            transform: translateY(-50%);
+            top: 45vh;
+        }
+
+        .notallow {
+            font-size: 2.5rem;
+            color: rgb(68, 68, 68);
+        }
+
+        .notallow+.tip {
+            font-size: 1.7rem;
+            color: rgb(144, 144, 144);
+        }
+
+        .notallow,
+        .notallow+.tip {
+            line-height: 2em;
+            cursor: not-allowed;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .tip kbd {
+            color: rgb(255, 255, 255);
+            background: rgb(50, 50, 50) none repeat scroll 0% 0%;
+            border-radius: 9%;
+            box-shadow: 1px 1px 1px rgb(87, 87, 87), 2px 2px 5px rgb(255, 255, 255);
+            text-shadow: 1px 1px 1px rgb(27, 27, 27);
+            font-family: Consolas, Monaco, monospace;
+        }
+
+        .text,
+        .text+.tip {
+            font-size: 4.5rem;
+            line-height: 6rem;
+            color: #777;
+        }
+
+        .tip em,
+        .tip a {
+            color: #87aefc;
+            cursor: crosshair;
+        }
+
+        .text em {
+            color: #F80;
+        }
+
+        em,
+        a,
+        kbd {
+            text-decoration: none;
+            font-style: normal;
+            margin: 0.5rem;
+            padding: 0.3rem 0.7rem;
+        }
+
+        .email {
+            text-transform: lowercase;
+            font-family: Consolas, Monaco, monospace;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="info"></div>
+        <div id="tip" class="tip"></div>
+    </div>
+    <script type="text/javascript">
+        const lang = window.navigator.languages,
+            nInfo = document.getElementById("info"),
+            nTip = document.getElementById("tip");
+        let content,
+            domainA = window.location.host.split("."),
+            domainS = domainA.join(""),
+            domainC,
+            email = "\u0068\u0075\u007a\u0040\u006c\u0069\u0076\u0065\u002e\u0068\u006b";
+        if (/(githubio|oschinaio)$/i.test(domainS) || !domainS || domainS * 1) { // the ip
+            nInfo.className = "notallow"
+            content = {
+                title: ["禁止访问 403 Forbidden", "403 Forbidden"],
+                info: ["你没有得到授权就访问到了这个页面", "You have not been authorized to visit this page"],
+                tip: ["请按下<kbd>Ctrl</kbd>+<kbd>W</kbd>关闭窗口", "Press<kbd>Ctrl</kbd>+<kbd>W</kbd>to close the window"]
+            }
+
+        } else { // the domain
+            nInfo.className = "text"
+            domainC = (/^(com|org|net|co)$/i.test(window.location.host.split(".").reverse()[1]) ? domainA.splice(-3) : domainA.splice(-2)).join(".").toUpperCase();
+            content = {
+                title: ["此域名可出售 THE DOMAIN IS FOR SALE", "THE DOMAIN IS FOR SALE"],
+                info: ["域名<em>" + domainC + "</em>可出售。", "DOMAIN<em>" + domainC + "</em>IS FOR SALE"],
+                tip: ["带上你的报价联系：<br /><em class=\"email\">" + email + "</em>或<a onclick=\"popup();\"  href=\"javascript:void 0\" title=\"点击这里给我发消息\" >QQ交谈</a>", "You can contact with<br /><em class=\"email\">" + email + "</em>"]
+            }
+
+            function popup() { //
+                window.open("http://sighttp.qq.com/authd?IDKEY=f703589473c7baeedaf2e49ca004b1e81ab4b2d6c4a57322",
+                    "name",
+                    "Width=600,Height=400,Top=200,left=200,scrollbars=no");
+            }
+        }
+
+
+        if (lang.indexOf("zh") + 1 || lang.indexOf("zh-CN") + 1) { // zh
+            document.title = content.title[0]
+            nInfo.innerHTML = content.info[0]
+            nTip.innerHTML = content.tip[0]
+        } else { // en
+            document.title = content.title[1]
+            nInfo.innerHTML = content.info[1]
+            nTip.innerHTML = content.tip[1]
+        }
+
+    </script>
+</body>
+
+</html>
