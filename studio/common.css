@@ -5,7 +5,6 @@ body {
 }
 
 li div {
-    display: inline-block;
     margin-right: 15px;
 }
 
@@ -14,4 +13,16 @@ li {
     list-style: none;
     display: block;
     margin-top: 10px;
+}
+
+.inline-block * {
+    display: inline-block;
+}
+
+.button {
+    margin: 10px;
+    background: #1995cf;
+    padding: 8px 10px;
+    color: #fff;
+    border-radius: 4px;
 }

@@ -50,6 +50,8 @@ input#calc {
     line-height: 1em;
     height: 22px;
     overflow: hidden;
+    width: initial;
+    margin-top: 0;
 }
 
 #calc_his li+li {
@@ -169,4 +171,13 @@ input#calc {
 .uncode li textarea {
     display: block;
     margin-top: 10px;
+}
+
+
+/* svg img */
+
+.svgimg textarea {
+    width: 500px;
+    height: 140px;
+    margin: 10px 0;
 }

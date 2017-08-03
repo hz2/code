@@ -326,11 +326,77 @@
             $("#type_charcode").val(getHtml.split(/\W+/g).filter(x => x !== "").map(x => String.fromCharCode(x)).join(""));
         });
 
+        // SVG 转 data image
+        $("#type_svg2data").on("input", function() {
+            if ($("#type_svg2data").val()) {
+                let input = "data:image/svg+xml," + $("#type_svg2data").val().replace(/(<\?xml[\w \"\.\=\-]+\?>\n*)|version\ *\=\ *\"[\d\.]+\" |(\n\ +)|[\n\r\t]+/g, "")
+                if ($("#svg1")[0].checked) {
+                    $("#type_svg2result").val(input.replace(/</g, "%3C").replace(/#/g, "%23").replace(/>/g, "%3E").replace(/\"/g, "'"));
+                } else if ($("#svg2")[0].checked) {
+                    $("#type_svg2result").val(input.replace(/</g, "%3C").replace(/#/g, "%23").replace(/>/g, "%3E"))
+                }
+            } else {
+                $("#type_svg2result").val("");
+            }
+        });
+        $("#svg1").change(function() {
+
+            if ($("#type_svg2data").val() && $("#type_svg2result").val()) {
+                let input = "data:image/svg+xml," + $("#type_svg2data").val().replace(/(<\?xml[\w \"\.\=\-]+\?>\n*)|version\ *\=\ *\"[\d\.]+\" |(\n\ +)|[\n\r\t]+/g, "")
+                $("#type_svg2result").val("" + input.replace(/</g, "%3C").replace(/#/g, "%23").replace(/>/g, "%3E").replace(/\"/g, "'"));
+            }
+        });
+        $("#svg2").change(function() {
+
+            if ($("#type_svg2data").val() && $("#type_svg2result").val()) {
+                let input = "data:image/svg+xml," + $("#type_svg2data").val().replace(/(<\?xml[\w \"\.\=\-]+\?>\n*)|version\ *\=\ *\"[\d\.]+\" |(\n\ +)|[\n\r\t]+/g, "")
+                $("#type_svg2result").val(input.replace(/</g, "%3C").replace(/#/g, "%23").replace(/>/g, "%3E"));
+            }
+        });
+        $("#svgtest").click(function() {
+
+            if ($("#type_svg2data").val() && $("#type_svg2result").val()) {
+                $("#testimage")[0].style = {}
+                if ($("#svg2")[0].checked) {
+                    $("#testimage").css({
+                        "height": "200px",
+                        "width": "200px",
+                        "background": "url(\'" + $("#type_svg2result").val() + "\') #eee no-repeat 0% 0% / cover"
+                    })
+                } else {
+                    $("#testimage").css({
+                        "height": "200px",
+                        "width": "200px",
+                        "background": "url(\"" + $("#type_svg2result").val() + "\") #eee no-repeat 0% 0% / cover"
+                    })
+                }
+            }
+        });
+        $("#svgopen").click(function() {
+
+            if ($("#type_svg2data").val() && $("#type_svg2result").val()) {
+                if ($("#svg2")[0].checked) {
+                    window.open($('#type_svg2result').val());
+                } else {
+                    window.open($("#type_svg2result").val());
+                }
+            }
+        });
 
 
 
+        // ip to address
+        $("#ip2num").click(function() {
+            let input_ip = $("#ipaddr").val()
+            let numaddr = input_ip.split(".").map(x => {
+                x = parseInt(x, 10).toString(16);
+                x.length === 1 ? x = "0" + x : x;
+                return x
+            }).join("");
+            $("#numaddr").attr("href", "http://" + parseInt(numaddr, 16));
+            $("#numaddr").text("http://" + parseInt(numaddr, 16))
 
-
+        });
 
     });
 

@@ -7,6 +7,7 @@
     <script type="text/javascript" src="../assets/jquery-3.2.1.min.js"></script>
     <link type="text/css" href="../hxui.css" rel="stylesheet">
     <link type="text/css" href="style_math.css" rel="stylesheet">
+    <link type="text/css" href="common.css" rel="stylesheet">
 </head>
 
 <body>
@@ -47,7 +48,7 @@
         </li>
     </ul>
     <h2>网址编码</h2>
-    <div id="hex_tip">输入数字，自动转化成其他进制</div>
+    <div id="uri_tip">输入数字，自动转化成其他进制</div>
     <ul class="uncode">
         <li>
             <div>编码</div>
@@ -74,35 +75,45 @@
             <textarea id="type_htmlcode" placeholder="&amp;#23383;&amp;#31526;"></textarea>
         </li>
     </ul>
+    <h2>SVG 转 Data-image</h2>
+    <ul class="svgimg">
+        <li>
+            <div>输入 SVG 代码</div>
+            <textarea id="type_svg2data" placeholder="&#60;&#63;xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;&#63;&#62;"></textarea>
+        </li>
+        <input type="radio" id="svg1" value="svgsigle" name="svg" checked="checked">
+        <label for="svg1">单引号</label>
+        <input type="radio" id="svg2" value="svgdouble" name="svg">
+        <label for="svg2">双引号</label>
+        <input type="checkbox" id="svg3" value="svg64" disabled="true">
+        <label for="svg3">base64 加密</label>
+        <li>
+            <div class="inline-block">
+                <div>转换结果</div>
+                <div class="button" id="svgtest">点击测试</div>
+                <div class="button" id="svgopen">新窗口打开</div>
+            </div>
+            <textarea id="type_svg2result" placeholder="data:image/svg+xml"></textarea>
+        </li>
+        <div id="testimage"></div>
+    </ul>
 
-    <!-- <h2>IP 转 数字地址</h2>
-    <div id="hex_tip">输入数字，自动转化成其他进制</div>
-    <ul id="uri">
+
+    <h2>IP 转 数字地址</h2>
+    <ul class="ipmun">
         <li>
             <div>IP 地址</div>
-            <input type="text" name="ipaddr" placeholder="IP">
+            <div class="inline-block">
+                <input type="text" id="ipaddr" placeholder="127.0.0.1">
+                <div class="button" id="ip2num">开始转换</div>
+            </div>
         </li>
-        <button id="ip2num" onclick=ip2num()>开始转换</button>
-        <li>
+        <li class="inline-block">
             <div>数字地址</div>
-            <a href="" id="numaddr" target="_blank"></a>
+            <a id="numaddr" target="_blank"> </a>
 
         </li>
     </ul>
-    <script>
-        // ip to address
-        function ip2num() {
-            var input_ip = document.getElementsByName("ipaddr")[0].value;
-            var numaddr = input_ip.split(".").map(x => {
-                x = parseInt(x, 10).toString(16);
-                x.length === 1 ? x = "0" + x : x;
-                return x
-            }).join("");
-            document.getElementById("numaddr").setAttribute("href", "http://" + parseInt(numaddr, 16));
-            document.getElementById("numaddr").innerHTML = "http://" + parseInt(numaddr, 16)
-
-        }
-    </script> -->
     <script type="text/javascript" src="main_math.js"></script>
 </body>
 
