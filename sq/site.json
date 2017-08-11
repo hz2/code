@@ -1,25 +1,25 @@
 { 
 "Outlook":["https://mail.live.com/","outlook","#0072c6"],
-"微博":["http://weibo.com/","weib","#e93743"],
-"知乎":["http://www.zhihu.com/","zhihu","#1773d1"],
+"微博":["https://weibo.com/","weib","#e93743"],
+"知乎":["https://www.zhihu.com/","zhihu","#1773d1"],
 "腾讯动漫":["http://ac.qq.com/","qieniang","#ff7c48"],
 "Github":["https://github.com/","github","#829aa8"],
 
 "QQ邮箱":["https://mail.qq.com/","qqmail","#ffbf00"],
-"贴吧":["http://tieba.baidu.com/","tieba","#1486c7"],
+"贴吧":["https://tieba.baidu.com/","tieba","#1486c7"],
 "简书":["http://www.jianshu.com/","jianshu","#e78170"],
-"哔哩哔哩":["http://www.bilibili.com/","bilibili","#03a2d6"],
+"哔哩哔哩":["https://www.bilibili.com/","bilibili","#03a2d6"],
 "易名资讯":["http://www.ename.cn/","ename","#fe9610"],
 
 "网易邮箱":["http://126.com/","netease","#DD2727"],
 "cnBeta":["http://www.cnbeta.com/","cnbeta","#447EB9"],
-"云音乐":["http://music.163.com/","163music","#f03737"],
+"云音乐":["https://music.163.com/","163music","#f03737"],
 "爱稀饭":["http://www.acfun.cn/","acniang","#feb737"],
 "SF":["https://segmentfault.com/","sfgreen","#009a61"],
 
 "Onenote":["https://www.onenote.com/notebooks","onenote","#80397b"],
 "推特":["https://twitter.com/","twi","#1da1f2"],
-"每日一文":["http://www.meiriyiwen.com/","meiriyw","#555"],
-"Pixiv":["http://www.pixiv.net/","pixiv","#009cff"],
-"V2EX":["http://www.v2ex.com/","v2ex","#808080"]
+"每日一文":["https://www.meiriyiwen.com/","meiriyw","#555"],
+"Pixiv":["https://www.pixiv.net/","pixiv","#009cff"],
+"V2EX":["https://www.v2ex.com/","v2ex","#808080"]
 }

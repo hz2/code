@@ -26,3 +26,24 @@ li {
     color: #fff;
     border-radius: 4px;
 }
+
+.code {
+    font-family: Consolas, Monaco, monospace;
+}
+
+.uncode li input[type="checkbox"] {
+    width: initial;
+    margin-right: 5px;
+}
+
+input+label {
+    cursor: pointer;
+}
+
+input:disabled {
+    cursor: not-allowed;
+}
+
+input:disabled+label {
+    opacity: .7
+}

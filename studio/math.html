@@ -48,8 +48,12 @@
         </li>
     </ul>
     <h2>网址编码</h2>
-    <div id="uri_tip">输入数字，自动转化成其他进制</div>
+    <div id="uri_tip">对统一资源标识符（URI）进行编码</div>
     <ul class="uncode">
+        <li>
+            <input type="checkbox" id="uri_mode" value="">
+            <label for="uri_mode">URIComponent 模式</label>
+        </li>
         <li>
             <div>编码</div>
             <input type="text" id="type_uriencode" placeholder="中文">
@@ -57,6 +61,18 @@
         <li>
             <div>解码</div>
             <input type="text" id="type_uridecode" placeholder="%E4%B8%AD%E6%96%87">
+        </li>
+    </ul>
+    <h2>Base64 编码</h2>
+    <div>对 Base64 进行编码解码</div>
+    <ul class="uncode">
+        <li>
+            <div>编码</div>
+            <input type="text" id="type_b64encode" placeholder="Base+64">
+        </li>
+        <li>
+            <div>解码</div>
+            <input type="text" id="type_b64decode" placeholder="QmFzZSs2NA==">
         </li>
     </ul>
     <h2>Unicode 编码</h2>
@@ -68,34 +84,40 @@
         </li>
         <li>
             <div>Unicode 编码</div>
-            <textarea id="type_unicode" placeholder="\u5b57\u7b26"></textarea>
+            <textarea class="code" id="type_unicode" placeholder="\u5b57\u7b26"></textarea>
         </li>
         <li>
             <div>HTML 实体</div>
-            <textarea id="type_htmlcode" placeholder="&amp;#23383;&amp;#31526;"></textarea>
+            <textarea class="code" id="type_htmlcode" placeholder="&amp;#23383;&amp;#31526;"></textarea>
         </li>
     </ul>
     <h2>SVG 转 Data-image</h2>
     <ul class="svgimg">
         <li>
             <div>输入 SVG 代码</div>
-            <textarea id="type_svg2data" placeholder="&#60;&#63;xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;&#63;&#62;"></textarea>
+            <textarea class="code" id="type_svg2data" placeholder="&#60;&#63;xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;&#63;&#62;"></textarea>
         </li>
         <input type="radio" id="svg1" value="svgsigle" name="svg" checked="checked">
         <label for="svg1">单引号</label>
         <input type="radio" id="svg2" value="svgdouble" name="svg">
         <label for="svg2">双引号</label>
-        <input type="checkbox" id="svg3" value="svg64" disabled="true">
+        <input type="checkbox" id="svg3" value="svg64">
         <label for="svg3">base64 加密</label>
+        <input type="checkbox" id="svg4" value="namespace" checked="checked">
+        <label for="svg4">添加命名空间</label>
         <li>
+            <div>转换结果</div>
+            <textarea class="code" id="type_svg2result" placeholder="data:image/svg+xml"></textarea>
             <div class="inline-block">
-                <div>转换结果</div>
                 <div class="button" id="svgtest">点击测试</div>
                 <div class="button" id="svgopen">新窗口打开</div>
+                <div class="button" id="svgsample">示例</div>
             </div>
-            <textarea id="type_svg2result" placeholder="data:image/svg+xml"></textarea>
         </li>
-        <div id="testimage"></div>
+        <div class="inline-block">
+            <div id="testimage" style="display:none"></div>
+            <textarea id="testdata" style="display:none" class="code"></textarea>
+        </div>
     </ul>
 
 
