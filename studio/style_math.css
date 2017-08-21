@@ -27,6 +27,13 @@ input#calc {
     width: 400px;
 }
 
+#calc_tip_sub {
+    margin: 10px 0;
+    padding: 3px 8px;
+    border-radius: 2px;
+    width: 250px;
+}
+
 #hex_tip kbd {
     background: #eee;
     color: #555;
@@ -62,6 +69,10 @@ input#calc {
     border-radius: 5px 5px 0 0;
 }
 
+#calc_his li:nth-child(n+6) {
+    display: none;
+}
+
 #calc_his li span {
     line-height: 1.6em;
     display: inline-block;
@@ -70,7 +81,7 @@ input#calc {
     word-break: keep-all;
 }
 
-.myinput_his {
+.myInput_his {
     max-width: 263px;
 }
 

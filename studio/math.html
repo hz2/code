@@ -12,7 +12,8 @@
 
 <body>
     <h2>输入框计算器</h2>
-    <div id="calc_tip">支持输入数字进行加<kbd>+</kbd>减<kbd>-</kbd>乘<kbd>*</kbd>除<kbd>/</kbd>四则运算。</div>
+    <div id="calc_tip">支持输入加<kbd>+</kbd>减<kbd>-</kbd>乘<kbd>*</kbd>除<kbd>/</kbd>括号<kbd>(</kbd><kbd>)</kbd>的运算。</div>
+    <div id="calc_tip_sub"></div>
     <input type="text" id="calc" value="" placeholder="1+(2*3)/5-6"> = <span id="calc_result">归零</span>
     <ul id="calc_his">
         <li></li>
@@ -25,7 +26,7 @@
         <li></li>
         <li></li>
         <li></li>
-        <div class="his_tip"><span id="calc_clear">清空</span> | <span id="calc_reset">归零</span> <span id="calc_toggle"></span></div>
+        <div class="his_tip"><span id="calc_clear">清空</span> | <span id="calc_reset">归零</span> <span id="calc_toggle">展开</span></div>
     </ul>
     <h2>进制转换</h2>
     <div id="hex_tip">输入数字，自动转化成其他进制</div>
@@ -56,11 +57,11 @@
         </li>
         <li>
             <div>编码</div>
-            <input type="text" id="type_uriencode" placeholder="中文">
+            <input type="text" id="type_uriEncode" placeholder="中文">
         </li>
         <li>
             <div>解码</div>
-            <input type="text" id="type_uridecode" placeholder="%E4%B8%AD%E6%96%87">
+            <input type="text" id="type_uriDecode" placeholder="%E4%B8%AD%E6%96%87">
         </li>
     </ul>
     <h2>Base64 编码</h2>
@@ -68,11 +69,11 @@
     <ul class="uncode">
         <li>
             <div>编码</div>
-            <input type="text" id="type_b64encode" placeholder="Base+64">
+            <input type="text" id="type_b64Encode" placeholder="Base+64">
         </li>
         <li>
             <div>解码</div>
-            <input type="text" id="type_b64decode" placeholder="QmFzZSs2NA==">
+            <input type="text" id="type_b64Decode" placeholder="QmFzZSs2NA==">
         </li>
     </ul>
     <h2>Unicode 编码</h2>
@@ -80,7 +81,7 @@
     <ul class="uncode">
         <li>
             <div>字符</div>
-            <textarea id="type_charcode" placeholder="字符"></textarea>
+            <textarea id="type_charCode" placeholder="字符"></textarea>
         </li>
         <li>
             <div>Unicode 编码</div>
@@ -88,51 +89,22 @@
         </li>
         <li>
             <div>HTML 实体</div>
-            <textarea class="code" id="type_htmlcode" placeholder="&amp;#23383;&amp;#31526;"></textarea>
+            <textarea class="code" id="type_htmlCode" placeholder="&amp;#23383;&amp;#31526;"></textarea>
         </li>
     </ul>
-    <h2>SVG 转 Data-image</h2>
-    <ul class="svgimg">
-        <li>
-            <div>输入 SVG 代码</div>
-            <textarea class="code" id="type_svg2data" placeholder="&#60;&#63;xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;&#63;&#62;"></textarea>
-        </li>
-        <input type="radio" id="svg1" value="svgsigle" name="svg" checked="checked">
-        <label for="svg1">单引号</label>
-        <input type="radio" id="svg2" value="svgdouble" name="svg">
-        <label for="svg2">双引号</label>
-        <input type="checkbox" id="svg3" value="svg64">
-        <label for="svg3">base64 加密</label>
-        <input type="checkbox" id="svg4" value="namespace" checked="checked">
-        <label for="svg4">添加命名空间</label>
-        <li>
-            <div>转换结果</div>
-            <textarea class="code" id="type_svg2result" placeholder="data:image/svg+xml"></textarea>
-            <div class="inline-block">
-                <div class="button" id="svgtest">点击测试</div>
-                <div class="button" id="svgopen">新窗口打开</div>
-                <div class="button" id="svgsample">示例</div>
-            </div>
-        </li>
-        <div class="inline-block">
-            <div id="testimage" style="display:none"></div>
-            <textarea id="testdata" style="display:none" class="code"></textarea>
-        </div>
-    </ul>
-
 
     <h2>IP 转 数字地址</h2>
     <ul class="ipmun">
         <li>
             <div>IP 地址</div>
             <div class="inline-block">
-                <input type="text" id="ipaddr" placeholder="127.0.0.1">
+                <input type="text" id="ipAddr" placeholder="127.0.0.1">
                 <div class="button" id="ip2num">开始转换</div>
             </div>
         </li>
         <li class="inline-block">
             <div>数字地址</div>
-            <a id="numaddr" target="_blank"> </a>
+            <a id="numAddr" target="_blank"> </a>
 
         </li>
     </ul>
