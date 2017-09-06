@@ -1,102 +1,119 @@
 /*jshint esversion: 6 */
 /*jshint asi: true */
 
+
 ;
 (function() {
     'use strict'
     /*global $ */
     // Math
 
-    let zero = 0
+    let zero = 0,
+        countArr = [],
+        tmpInput
     $(document).ready(function() {})
 
-    function basic(v) { // 基础运算
-        return v.replace(/(\/\-?\d{1,}(\.\d{1,})?)/g, '*(' + '$1' + ')').replace(/\(\/\-?\d{1,}(\.\d{1,})?\)/g, x => {
+
+    /* 还要为 -数优化
+    //除法  替换 /n 为 (/n)
+    s.replace(/(\/\d{1,}(\.\d{1,})?)/g,"*("+"$1"+")") 
+    //除法  计算 (/n) 为 数字
+    s.replace(/\(\/\d{1,}(\.\d{1,})?\)/g,x=> {return 1 / x.replace(/[\(\)\/]/g,"")})
+    //乘法  替换 m*n*o 为 [m,n,o]的乘积
+    s.replace(/(\d{1,}(\.\d{1,})?(\*\d{1,}(\.\d{1,})?){1,})/g,x=>x.split("*").reduce( (r, value) => { return r * value },1) )
+    //减法  替换 -n 为 +(-n)
+    s.replace(/(\-\d{1,}(\.\d{1,})?)/g,"+("+"$1"+")") 
+    //加法  通过 )+( 分割 并求和
+    s.replace(/[\(\)]/g,"").split(/\)?\+\(?/g).reduce( (r, value) => { return r * 1 + value * 1 },0)
+     */
+
+    function calc(x) {
+        function basic(v) { // 基础运算
+            return v.replace(/(\/\-?\d{1,}(\.\d{1,})?)/g, '*(' + '$1' + ')').replace(/\(\/\-?\d{1,}(\.\d{1,})?\)/g, x => {
                 return 1 / x.replace(/[\(\)\/]/g, '')
             }).replace(/(\-?\d{1,}(\.\d{1,})?(\*\-?\d{1,}(\.\d{1,})?){1,})/g, x => x.split('*').reduce((r, value) => {
                 return r * value
             }, 1)).replace(/(\-\-?\d{1,}(\.\d{1,})?)/g, '+(' + '$1' + ')').replace(/[\(\)]/g, '').split(/\)?\+\(?/g).reduce((r, value) => {
                 return r * 1 + value * 1
             }, 0)
-            /* 还要为 -数优化
-            //除法  替换 /n 为 (/n)
-            s.replace(/(\/\d{1,}(\.\d{1,})?)/g,"*("+"$1"+")") 
-            //除法  计算 (/n) 为 数字
-            s.replace(/\(\/\d{1,}(\.\d{1,})?\)/g,x=> {return 1 / x.replace(/[\(\)\/]/g,"")})
-            //乘法  替换 m*n*o 为 [m,n,o]的乘积
-            s.replace(/(\d{1,}(\.\d{1,})?(\*\d{1,}(\.\d{1,})?){1,})/g,x=>x.split("*").reduce( (r, value) => { return r * value },1) )
-            //减法  替换 -n 为 +(-n)
-            s.replace(/(\-\d{1,}(\.\d{1,})?)/g,"+("+"$1"+")") 
-            //加法  通过 )+( 分割 并求和
-            s.replace(/[\(\)]/g,"").split(/\)?\+\(?/g).reduce( (r, value) => { return r * 1 + value * 1 },0)
-             */
-    }
-
-    function calc(x) {
+        }
         if (/^[\+\-\*\/\.\d]+$/.test(x)) { // 没有括号则进行基础运算
             x = /^-/.test(x) ? '0' + x : x; // -n 开头换为 0-n 
-            return basic(x)
+            let t = basic(x)
+            countArr.push(x, t)
+            console.table(countArr)
+            countArr = []
+            return t
         } else if (/^[\(\)\+\-\*\/\.\d]+$/.test(x)) { // 有括号先处理括号
+            countArr.push(x)
             let t = x
-            while (/^[\(\)\+\-\*\/\.\d]+$/.test(t) && /\(/.test(t) && /\)/.test(t)) {
-                t = t.replace(/\(([\+\-\*\/\.\d]+)+\)/g, x => {
-                    return basic(x)
-                })
-            }
-            t = basic(t)
-            console.log(t)
+            t = calc(t.replace(/\(([\+\-\*\/\.\d]+)+\)/g, x => {
+                return basic(x)
+            }))
             return t
         } else {
             console.log('出现错误')
         }
     }
 
+
     // 计算器 点击事件
     $('#calc').on('input', function() {
-        let val = $('#calc').val().split(' ').join('')
-        $('#calc').attr("maxlength", "")
+        let val = $('#calc').val().replace("（", "(").replace("）", ")").split(' ').join('')
+        $('#calc').attr('maxlength', '')
         if (!val) {
-            $("#calc_tip_sub").attr("class", "").text("");
-            $("#calc_result").attr("class", "").text("归零");
-        } else if (/\/0+$/g.test(val)) {
-            $("#calc_tip_sub").text("分母不能为零").attr("class", "error");
-            $("#calc_result").text("无穷").attr("class", "error");
-            $('#calc').attr("maxlength", val.length)
-        } else if (/[\+\-\*]0\/$/g.test(val)) {
-            $("#calc_tip_sub").text("分子为零").attr("class", "warn");
-        } else if (/[^0-9\+\-\*\/\.\(\)]+/g.test(val)) {
-            $("#calc_tip_sub").text("输入不正确").attr("class", "error");
-            $("#calc_result").text("错误").attr("class", "error");
-            $('#calc').attr("maxlength", val.length)
+            $('#calc_tip_sub').attr('class', '').text('')
+            $('#calc_result').attr('class', '').text('归零')
+        } else if (!/^[0-9\+\-\*\/\.\(\)]+$/g.test(val)) {
+            $('#calc_tip_sub').text('输入不正确').attr('class', 'error')
+            $('#calc_result').text('错误').attr('class', 'error')
+            $('#calc').attr('maxlength', val.length)
+        } else if (val == tmpInput) {
+            $('#calc_tip_sub').text('请继续输入').attr('class', 'warn')
+        } else if (Number(val)) {
+            $('#calc_tip_sub').text('请继续输入').attr('class', 'warn')
         } else if (/[\-\+\*\/]{2,}/g.test(val) || /\([\-\+\*\/]/g.test(val)) {
-            $("#calc_tip_sub").text("同时输入了多个运算符").attr("class", "warn");
-            $("#calc_result").text("错误").attr("class", "error");
-            $('#calc').attr("maxlength", val.length)
+            $('#calc_tip_sub').text('同时输入了多个运算符').attr('class', 'warn')
+            $('#calc_result').text('错误').attr('class', 'error')
+            $('#calc').attr('maxlength', val.length)
+        } else if (val.indexOf("()") !== -1) {
+            $('#calc_tip_sub').text('请继续输入数字').attr('class', 'warn')
+        } else if (/[\+\-\*\/]\)/g.test(val)) {
+            $('#calc_tip_sub').text('请继续输入数字').attr('class', 'warn')
+        } else if (/\((\-?\d+?(\.(\d+)?)?)?\)/g.test(val)) {
+            $('#calc_tip_sub').text('请继续输入数字').attr('class', 'warn')
+        } else if (/\/0+$/g.test(val)) {
+            $('#calc_tip_sub').text('分母不能为零').attr('class', 'error')
+            $('#calc_result').text('无穷').attr('class', 'error')
+            $('#calc').attr('maxlength', val.length)
+        } else if (/[\+\-\*]0\/$/g.test(val)) {
+            $('#calc_tip_sub').text('分子为零').attr('class', 'warn')
         } else if (/\)\d$/g.test(val) || /\d\($/g.test(val)) {
-            $("#calc_tip_sub").text("缺少运算符").attr("class", "error");
-            $("#calc_result").text("错误").attr("class", "error");
-            $('#calc').attr("maxlength", val.length)
+            $('#calc_tip_sub').text('缺少运算符').attr('class', 'error')
+            $('#calc_result').text('错误').attr('class', 'error')
+            $('#calc').attr('maxlength', val.length)
         } else if (/^[\+\*\/]+/g.test(val)) {
-            $("#calc_tip_sub").text("开头不要运算符号").attr("class", "warn");
-            $("#calc_result").text("错误").attr("class", "error");
-            $('#calc').attr("maxlength", val.length)
+            $('#calc_tip_sub').text('开头不要运算符号').attr('class', 'warn')
+            $('#calc_result').text('错误').attr('class', 'error')
+            $('#calc').attr('maxlength', val.length)
         } else if (!/[\d\)]$/g.test(val)) {
-            $("#calc_tip_sub").text("请继续输入数字").attr("class", "warn");
+            $('#calc_tip_sub').text('请继续输入数字').attr('class', 'warn')
         } else if (/\(/g.test(val) && !/\)/g.test(val)) {
-            $("#calc_tip_sub").text("请输入收括号").attr("class", "warn");
+            $('#calc_tip_sub').text('请输入收括号').attr('class', 'warn')
         } else if (/\(/g.test(val) && /\)/g.test(val) && val.match(/\)/g).length < val.match(/\(/g).length) {
-            $("#calc_tip_sub").text("请输入收括号").attr("class", "warn");
+            $('#calc_tip_sub').text('请输入收括号').attr('class', 'warn')
         } else if (/\(/g.test(val) && /\)/g.test(val) && val.match(/\)/g).length > val.match(/\(/g).length) {
-            $("#calc_tip_sub").text("输入了多余的收括号").attr("class", "error");
-            $('#calc').attr("maxlength", val.length)
+            $('#calc_tip_sub').text('输入了多余的收括号').attr('class', 'error')
+            $('#calc').attr('maxlength', val.length)
         } else { // 计算
+            tmpInput = val;
             let r = calc(val)
-            $("#calc_tip_sub").text("计算结果").attr("class", "");
-            $("#calc_result").attr("class", "").text(r);
+            $('#calc_tip_sub').text('计算结果').attr('class', '')
+            $('#calc_result').attr('class', '').text(r)
             $('#calc_his').prepend('<li class="input_his"><span class="myInput_his">' + val + '</span><span class="eq_his">=</span><span class="result_his">' + r + '</span><span class="index_his"># ' + (zero += 1) + '</span></li>')
         }
-        if ($("#calc_his li").length > 10) { // li 超出移除
-            $("#calc_his li:gt(9)").remove();
+        if ($('#calc_his li').length > 10) { // li 超出移除
+            $('#calc_his li:gt(9)').remove()
         }
         if ($('#calc_toggle').text() === '展开') { // 大于5不显示
             $('#calc_his li:gt(4)').css('display', 'none')
@@ -119,7 +136,6 @@
             $('#calc_tip_sub').text('')
             $('#calc_result,#calc_tip_sub').attr('class', ' ')
         })
-
     })
 
     $('#calc_clear').on('click', function() { // 清空
@@ -147,9 +163,6 @@
             $('#calc_his li:gt(4)').slideDown(300, 'linear')
         }
     })
-
-
-
 
     // 二进制
     $('input#type_bin').on('input', function() {
