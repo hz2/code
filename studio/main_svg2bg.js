@@ -12,7 +12,7 @@
     }
     // SVG 转 data image
     $('#type_svg2data').on('input', function() {
-        let inputVal = $('#type_svg2data').val().replace(/(<\?xml[\w \"\.\=\-]+\?>\n*)|version\ *\=\ *\"[\d\.]+\" |(\n\ +)|[\n\r\t]+|(\ id\=[\w\-\_\"\']+)/g, ''),
+        let inputVal = $('#type_svg2data').val((<\?xml[\w \"\.\=\-]+\?>\n*)|version\ *\=\ *\"[\d\.]+\" |(\n\ +)|(\ id\=[\w\-\_\"\']+)).replace(//g, '').replace(/[\n\r\t]+/g, ' '),
             // 去除 xml 声明 版本 空格 宽高id
             $result = $('#type_svg2result')
         if (inputVal) {
