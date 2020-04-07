@@ -13,6 +13,7 @@ var ua = window.navigator.userAgent,
         ["联网状态", window.navigator.onLine],
         ["平台", window.navigator.platform],
         ["供应商", window.navigator.vendor],
+        ["设备内存", window.navigator.deviceMemory],
         ["屏幕尺寸", window.screen.width + "x" + window.screen.height]
     ],
     ua_b = [],
@@ -71,9 +72,9 @@ if (/hahhaha2017/i.test(ua)) {
 } else if (ua.match(/(palemoon\/\d+)/i)) { //苍月
     ua_b = ["palemoon", RegExp.$1.replace("/", " ")];
 } else if (ua.match(/(Focus\/[\d\.]+)/i)) { // 火狐 focus
-    ua_b = ["firefox", RegExp.$1.replace("/", " "), "focus"];
+    ua_b = ["s-firefox", RegExp.$1.replace("/", " "), "focus"];
 } else if (ua.match(/(firefox\/\d+)/i)) { // 火狐系最后
-    ua_b = ["firefox", RegExp.$1.replace("/", " ")];
+    ua_b = ["s-firefox", RegExp.$1.replace("/", " ")];
 } else if (ua.match(/yabrowser\/(\d+\.\d+)/i)) {
     ua_b = ["yandex", "Yandex " + RegExp.$1];
 } else if (ua.match(/(midori\/\d+\.\d+)/i)) {
@@ -112,6 +113,8 @@ if (/hahhaha2017/i.test(ua)) {
     ua_b = ["silk", "Silk"];
 } else if (ua.match(/(TheWorld\ \d+)/i)) {
     ua_b = ["theworld", RegExp.$1.replace("/", " ")];
+} else if (ua.match( /edga?\/(\d+\.\d+)/i )) {
+    ua_b = ["s-newedge", "Edge " + RegExp.$1];
 } else if (ua.match(/((thunderbird|electron|qiyu|quark|HuohouBrowser|quickbrowser|nokiabrowser|Otter)\/\d+\.?\d+)/i)) { // 已知但没图标
     ua_b = ["browser", RegExp.$1.replace("/", " ")];
 } else if (/bingweb/i.test(ua)) {
@@ -276,7 +279,7 @@ ua_s.length === 2 ? icon_s = "icon-" + ua_s[0] : icon_s = "icon-" + ua_s[2];
 ua_h.length === 2 ? icon_h = "icon-" + ua_h[0] : icon_h = "icon-" + ua_h[2];
 **/
 if (ua_b.length === 2) {
-    icon_b = "icon-" + ua_b[0];
+    icon_b = "icon-" + ua_b[0].replace('s-','');
 } else {
     icon_b = "icon-" + ua_b[2];
 }
@@ -290,11 +293,21 @@ if (ua_h.length === 2) {
 } else {
     icon_h = "icon-" + ua_h[2];
 }
+
+function getBrowserStr(){
+  if ( /^s-/g.test(ua_b[0]) ) {
+    return "<div class=\"browser " + icon_b + "\"><img src=\"standalone/" + ua_b[0].replace('s-','') + ".svg\" alt=\"" + ua_b[0] + "\"><div>" + ua_b[1] + "</div></div>"
+  } else {
+    return "<div class=\"browser " + icon_b + "\"><svg><use xlink:href=\"symbol.svg#" + ua_b[0] + "\"></use></svg><div>" + ua_b[1] + "</div></div>"
+  }
+
+}
+
 // 写入文档
 if (/triden|msie|windows phone/i.test(ua)) {
     document.getElementById("icon").innerHTML = "<div class=\"browser " + icon_b + "\"><img src=\"forie/" + ua_b[0] + ".svg\" alt=\"" + ua_b[0] + "\"><div>" + ua_b[1] + "</div></div><div class=\"system " + icon_s + "\"><img src=\"forie/" + ua_s[0] + ".svg\" alt=\"" + ua_s[0] + "\"><div>" + ua_s[1] + "</div></div><div class=\"hardware " + icon_h + "\"><img src=\"forie/" + ua_h[0] + ".svg\" alt=\"" + ua_h[0] + "\"><div>" + ua_h[1] + "</div></div>";
 } else {
-    document.getElementById("icon").innerHTML = "<div class=\"browser " + icon_b + "\"><svg><use xlink:href=\"symbol.svg#" + ua_b[0] + "\"></use></svg><div>" + ua_b[1] + "</div></div>" + "<div class=\"system " + icon_s + "\"><svg><use xlink:href=\"symbol.svg#" + ua_s[0] + "\"></use></svg><div>" + ua_s[1] + "</div></div>" + "<div class=\"hardware " + icon_h + "\"><svg><use xlink:href=\"symbol.svg#" + ua_h[0] + "\"></use></svg><div>" + ua_h[1] + "</div></div>";
+    document.getElementById("icon").innerHTML = getBrowserStr() + "<div class=\"system " + icon_s + "\"><svg><use xlink:href=\"symbol.svg#" + ua_s[0] + "\"></use></svg><div>" + ua_s[1] + "</div></div>" + "<div class=\"hardware " + icon_h + "\"><svg><use xlink:href=\"symbol.svg#" + ua_h[0] + "\"></use></svg><div>" + ua_h[1] + "</div></div>";
 }
 for (i = 0; i < navi.length; i += 1) {
     res += "<li><div class=\"nav_name\">" + navi[i][0] + "</div><div class=\"nav_key\">" + navi[i][1] + "</div></li>";
