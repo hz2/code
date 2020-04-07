@@ -38,8 +38,11 @@ body {
     background: #00a3ee;
 }
 
+.icon-android {
+    background: #3ddc84;
+}
+
 .icon-acer,
-.icon-android,
 .icon-dolphin,
 .icon-htc,
 .icon-midori {
