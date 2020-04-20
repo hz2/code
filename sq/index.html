@@ -27,13 +27,9 @@
                     $('ul').append("<li><a href=\"" + site[i][0] + "\" target=\"_blank\" title=\"" + i + "\"><i class=\"i-" + site[i][1] + "\" style=\"background:" + site[i][2] + ";\"></i></a></li>");
                 });
             });
-			
-			
-			
-
-            var url = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20json%20where%20url%3D%22' + encodeURIComponent('https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN') + '&format=json&callback=?&_=[TIMESTAMP]';
+            var url = 'https://bing.huching.cn/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN';
             $.getJSON(url, function(result) {
-                var img = result.query.results.json.images;
+                var img = result.images[0];
                 $('#bg').css("background-image", "url(//www.bing.com" + img.urlbase + "_1920x1080.jpg)");
                 $('#bg-v').css("background-image", "url(//www.bing.com" + img.urlbase + "_1080x1920.jpg)");
                 $('#text').attr("title", img.copyright);

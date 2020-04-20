@@ -38,8 +38,11 @@ body {
     background: #00a3ee;
 }
 
+.icon-android {
+    background: #3ddc84;
+}
+
 .icon-acer,
-.icon-android,
 .icon-dolphin,
 .icon-htc,
 .icon-midori {
@@ -112,7 +115,11 @@ body {
 }
 
 .icon-edge {
-    background: #0067B8;
+  background: #0067B8;
+}
+
+.icon-newedge {
+  background: #31c1e8;
 }
 
 .icon-fedora {
