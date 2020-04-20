@@ -357,6 +357,10 @@ body {
     background: #0be874;
 }
 
+.icon-samsungb {
+    background: #706cf5;
+}
+
 #icon>div svg,
 #icon>div img {
     width: 130px;
@@ -386,49 +390,55 @@ body {
     box-shadow: 1px 1px 50px rgba(0, 0, 0, .15);
 }
 
-.uainfo {
+.ua-info {
     display: inline-block;
     background: #fff;
     height: 780px;
+    overflow: auto;
     max-width: 910px;
     position: absolute;
     box-shadow: 10px 0px 50px rgba(0, 0, 0, 0.2) inset;
 }
 
-#uanavi li {
+#ua-nav li {
     list-style: none;
     display: inline-block;
     width: 100%;
 }
 
-#uanavi {
+#ua-nav {
     width: 85%;
     opacity: .75;
     margin: 50px auto;
     border: 1px #ccc solid;
 }
 
-#uanavi li+li {
+#ua-nav li+li {
     border-top: 1px #ccc solid;
 }
 
-#uanavi li div {
+#ua-nav li div {
     line-height: 40px;
     display: inline-block;
     width: 30%;
     padding-left: 50px;
 }
 
-#uanavi li:first-child div:last-child {
+#ua-nav li.user-agent div {
     display: block;
-    border-top: 1px #ccc solid;
+    width: auto;
+    line-height: 40px;
+    padding: 0 50px;
+}
+
+#ua-nav li.user-agent div.nav_value {
     border-left: 0;
-    width: initial;
+    border-top: 1px #ccc solid;
     line-height: 30px;
     padding: 20px 50px;
 }
 
-#uanavi li div+div {
+#ua-nav li div+div {
     border-left: 1px #ccc solid;
 }
 
@@ -438,7 +448,7 @@ body {
         height: 100vh;
         margin: 0 auto;
     }
-    .uainfo {
+    .ua-info {
         margin-left: 35vh;
         max-width: 115vh;
         height: auto;
@@ -468,7 +478,7 @@ body {
         height: auto;
         margin: 0;
     }
-    .uainfo {
+    .ua-info {
         margin: 40vw 0 0;
         max-width: 100%;
         display: block;

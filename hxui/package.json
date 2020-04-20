@@ -1,0 +1,24 @@
+{
+  "name": "hxui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "hcw",
+  "license": "MIT",
+  "description": "lightweight CSS framework",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.28.4",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.29.0",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.3.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
