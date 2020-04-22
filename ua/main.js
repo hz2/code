@@ -115,8 +115,10 @@
             arr = ["ie", RegExp.$1.replace(/rv/i, "IE").split(":").join(" ")]
         } else if (ua.match(/(msie\ \d+)/i)) {
             arr = ["ie", RegExp.$1.replace(/MSIE/i, "IE")]
-        } else if (ua.match(/(edge\/\d+)/i)) {
-            arr = ["edge", RegExp.$1.replace("/", " ")]
+        // } else if (ua.match(/(edge\/\d+)/i)) {
+        } else if (ua.match( /edga?\/(\d+\.\d+)/i )) {
+            arr = ["edge", "Edge " + RegExp.$1 ]
+            isNew = true
         } else if (ua.match(/mms\/(\d+\.\d+)/i)) { // opera Neon浏览器
             arr = ["operaneon", "Opera NEON " + RegExp.$1]
         } else if (ua.match(/opr\/(\d+\.\d+)[\S\ ]+developer/i)) { // opera 开发版
@@ -172,6 +174,7 @@
             arr = "Ubuntu"
         } else if (ua.match(/(android\ [\d\.]+)/i)) {
             arr = RegExp.$1
+            isNew = true
         } else if (ua.match(/(bb10|meego|symbian)/i)) {
             arr = ["system", RegExp.$1]
         } else if (/tablet os/i.test(ua)) {
@@ -184,6 +187,7 @@
             arr = "Linux"
         } else if (/android/i.test(ua)) {
             arr = "Android"
+            isNew = true
         } else if (/spider|bot|slurp/i.test(ua)) { // 爬虫
             arr = ["search", "搜索引擎"]
         } else { // 回退
@@ -373,7 +377,7 @@
             ['maxTouchPoints', '多点触控'],
             ['onLine', '联网状态'],
             ['platform', '平台'],
-            ['product', '产品']
+            ['product', '产品'],
         ]
         if (/MSIE|Trident|windows\ phone/i.test(ua)) { // ie
             navPri = [
@@ -396,11 +400,12 @@
             if (/Firefox|IceWeasel|IceCat|SeaMonkey|CamIno|like\ Firefox/i.test(ua)) { // firefox
                 navPri = navPri.concat([
                     ['appVersion', '应用版本'],
-                    ['buildID', '构建 ID'],
-                    ['mozE10sEnabled', '多进程 E10s']
+                    ['oscpu', '系统处理器'],
+                    ['buildID', '构建 ID']
                 ])
             } else {
                 navPri = navPri.concat([
+                    ['deviceMemory', '设备内存'],
                     ['vendor', '供应商']
                 ])
             }
@@ -426,6 +431,7 @@
                 }
             })
             uaList.unshift({ name: '用户代理', value: ua })
+            uaList.push({ name: '语言列表', value: window.navigator.languages.join(' / ') })
             uaList.push({ name: '屏幕尺寸', value: window.screen.width + 'x' + window.screen.height })
         }
 
