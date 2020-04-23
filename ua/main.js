@@ -117,7 +117,7 @@
             arr = ["ie", RegExp.$1.replace(/MSIE/i, "IE")]
         // } else if (ua.match(/(edge\/\d+)/i)) {
         } else if (ua.match( /edg(a|e)?\/(\d+\.\d+)/i )) {
-            arr = ["newedge", "Edge " + RegExp.$1 ]
+            arr = ["newedge", "Edge " + RegExp.$2 ]
             isNew = true
         } else if (ua.match(/mms\/(\d+\.\d+)/i)) { // opera Neon浏览器
             arr = ["operaneon", "Opera NEON " + RegExp.$1]
