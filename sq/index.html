@@ -31,7 +31,7 @@
                         );
                 });
             });
-            var url = 'https://bing.huching.cn/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN';
+            var url = 'https://bing.respok.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN';
             $.getJSON(url, function (result) {
                 var img = result.images[0];
                 $('#bg').css("background-image", "url(//www.bing.com" + img.urlbase +
@@ -41,7 +41,7 @@
                 $('#text').attr("title", img.copyright);
                 $('#text').after(" (" + img.enddate + ")");
                 $('#dl').attr({
-                    "href": "//www.bing.com" + img.urlbase + "_1920x1080.jpg",
+                    "href": "//www.bing.com" + img.urlbase + "_UHD.jpg",
                     "download": "download"
                 });
             });
