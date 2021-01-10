@@ -164,10 +164,6 @@ body {
   background: #F24C49;
 }
 
-.icon-miuib {
-  background: #2CA8EF;
-}
-
 .icon-opera,
 .icon-operanew,
 .icon-vivaldi {
@@ -366,6 +362,12 @@ body {
 
 .icon-samsungb {
   background: #706cf5;
+}
+.icon-miuibrowser {
+  background: #00dafc;
+}
+.icon-uosbrowser {
+  background: #908eff;
 }
 
 #icon>div svg,

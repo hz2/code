@@ -90,8 +90,12 @@
             arr = ["q360chr", "360极速浏览器"]
         } else if (/360 mso/i.test(ua)) {
             arr = ["q360so", "360搜索"]
+        } else if (/Linux\/UOS/i.test(ua)) { // UOS
+            arr = ["uosbrowser", "UOS浏览器"]
+            isNew = true
         } else if (/miuibrowser/i.test(ua)) { // 小米浏览器
-            arr = ["miuib", "小米浏览器"]
+            arr = ["miuibrowser", "小米浏览器"]
+            isNew = true
         } else if (/SamsungBrowser/i.test(ua)) { // 三星浏览器
             arr = ["samsungb", "三星浏览器"]
             isNew = true
